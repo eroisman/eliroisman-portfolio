@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="FR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Eli ROISMAN - Docker</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/logo5.ico" />
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+        <!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
+        <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
+
+        <!-- CDN link for highlight.js -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <!-- and it's easy to individually load additional languages -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/go.min.js"></script>
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head> 
+    <body class="d-flex flex-column h-100 bg-light add-space-between-words">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><img src="assets/Logo/Logo Files/For Web/svg/Color logo - no background.svg" width="200" height="auto" alt="Logo"></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resume.html">Curriculum vitæ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="BTS-SIO.html">BTS SIO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Projets</a></li>   
+                        <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
+                        <li class="nav-item"><a class="nav-link" href="documents.html">Documentation</a></li>                 
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+            <!-- Page Content - breadcrumb -->
+            <div class="container px-5 my-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-4 fw-bolder mb-0"><span class="text-gradient d-inline">Docker</span></h1>
+                    <div class="breadcrumb-container">
+                        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item fw-bolder text-gradient"><a href="index.html" style="text-decoration: none;">Accueil</a></li>
+                                <li class="breadcrumb-item text-gradient"><a href="documents.html" style="text-decoration: none;">Documentation</a></li>
+                                <li class="breadcrumb-item text-gradient"><a href="reseaux.html" style="text-decoration: none;">Réseaux</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Docker</li>
+                            </ol>
+                        </nav>    
+                    </div>
+                </div>
+
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-auto col-xl-auto col-xxl-auto">
+                        <h2 class="py-5 text-center"><strong>Docker</strong></h2>
+                        <h5 class="text-center mb-5">Premiers pas avec les conteneurs.</h5>
+                        <hr>
+                        <!-- In this page - offcanvas -->
+                        <div class="col-lg-4">
+                            <!-- In this page - offcanvas - Button-->
+                            <button class="btn bg-gradient-primary-to-secondary btn-table-of-contents text-light" 
+                                    type="button" 
+                                    data-bs-toggle="offcanvas" 
+                                    data-bs-target="#offcanvasStart" 
+                                    aria-controls="offcanvasStart">
+                                    <a class="btn bg-gradient-primary-to-secondary btn-table-of-contents text-light" 
+                                        href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Dans cette page">
+                                        <i class="bi bi-list"></i>
+                                    </a>
+                            </button>
+                            <!-- In this page - offcanvas - Navigation -->
+                            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasStart" aria-labelledby="offcanvasStartLabel">
+                                <div class="offcanvas-header text-secondary">
+                                    <h5 id="offcanvasStartLabel">Dans cette page</h5>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body mb-6">
+                                    <nav class="nav flex-column">
+                                        <a class="nav-link" href="#A">A - Lancer un conteneur</a>
+                                        <a class="nav-link" href="#B">B - Lancer une tâche dans un conteneur</a>
+                                    </nav>
+                                </div>
+                            </div>   
+                        </div>
+                        
+                        <!-- Section-->
+                        <section class="bg-light py-5">
+                            <h3 class="py-4" id="A"><strong>A - Lancer un conteneur :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>Lancer un conteneur est très simple :</p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-10">
+                                                    <pre class="code-block"><code class="shell"><div>docker run &lt;image qu’on veut lancer&gt;:&lt;version&gt;
+                                                    </div></code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                            <p>Dans docker, on lance des conteneurs à partir d’image : un conteneur est une instance d’une image. L’image est une recette, les conteneurs des gâteaux produits à partir de cette recette.</p>
+                                            <ol>
+                                                <li>
+                                                    <p>Lancez la  commande <strong>docker ps</strong><br>
+                                                    Cette commande permet de lister les conteneurs actifs (en fonctionnement).</p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-10">
+                                                            <pre class="code-block"><code class="shell"><div>docker ps</div></code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center mb-5"><img src="assets\DOCKER\A.1.01.png" class="img-fluid rounded" alt="Alt text"></div>
+                                                    <p>Lancez la commande <strong>docker ps -a</strong><br>
+                                                    Cette commande permet de lister tous les conteneurs (actifs et non-actifs)</p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-10">
+                                                            <pre class="code-block"><code class="shell"><div>docker ps -a</div></code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center mb-5"><img src="assets\DOCKER\A.1.02.png" class="img-fluid rounded" alt="Alt text"></div>
+                                                    <p>Normalement, pas grand chose ne devrait s’afficher : vous n’avez lancé aucun conteneur. Mais l’image que vous exploitez a normalement déjà lancer un conteneur...</p>
+                                                </li>
+                                                <li>
+                                                    <p>La commande <strong>docker images</strong><br>
+                                                    Cette commande liste toutes les images docker téléchargées sur votre système.<br>
+                                                    Normalement, il n’y en a aucune. Mais, toujours pareil...comme la machine sur laquelle vous travaillez a déjà utilisé docker...</p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-10">
+                                                            <pre class="code-block"><code class="shell"><div>docker images</div></code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center mb-5"><img src="assets\DOCKER\A.2.png" class="img-fluid rounded" alt="Alt text"></div>
+                                                </li>
+                                                <li>
+                                                    <p>Lancez la commande <strong>docker run ubuntu:latest</strong><br>
+                                                    Cette commande lance un conteneur contenant un système Ubuntu dans la dernière version disponible de l’image.</p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-10">
+                                                            <pre class="code-block"><code class="shell"><div>docker run ubuntu:latest</div></code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center mb-5"><img src="assets\DOCKER\A.3.png" class="img-fluid rounded" alt="Alt text"></div>
+                                                </li>
+                                                <li>
+                                                    <p>Utilisez les commandes <strong>docker ps</strong>, <strong>docker ps -a</strong> et <strong>docker images</strong></p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-10">
+                                                            <pre class="code-block"><code class="shell"><div>docker ps -a</div></code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center mb-5"><img src="assets\DOCKER\A.4.01.png" class="img-fluid rounded" alt="Alt text"></div>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-10">
+                                                            <pre class="code-block"><code class="shell"><div>docker image</div></code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center mb-5"><img src="assets\DOCKER\A.4.02.png" class="img-fluid rounded" alt="Alt text"></div>
+                                                </li>
+                                                <li>
+                                                    <p>Utilisez la commande <strong>docker run --name deuxieme ubuntu:latest</strong></p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-10">
+                                                            <pre class="code-block"><code class="shell"><div>docker run --name deuxieme ubuntu:latest</div></code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center mb-5"><img src="assets\DOCKER\A.5.01.png" class="img-fluid rounded" alt="Alt text"></div>
+                                                    <p>Lancez ensuite la commande <strong>docker ps -a</strong> et <strong>docker images</strong></p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-10">
+                                                            <pre class="code-block"><code class="shell"><div>docker ps -a
+docker images</div></code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center mb-5"><img src="assets\DOCKER\A.5.02.png" class="img-fluid rounded" alt="Alt text"></div>
+                                                    <p>Déduisez en l’utilité de l’option <strong>--name</strong> (à quoi elle sert) :</p>
+                                                    <p>L'option <strong>--name</strong> dans la commande <strong>docker run</strong> permet de donner un nom spécifique au conteneur qui est lancé. Dans l'exemple donné, la commande <strong>docker run --name deuxieme ubuntu:latest</strong> lance un nouveau conteneur à partir de l'image <strong>ubuntu:latest</strong> et lui donne le nom <strong>deuxieme</strong>.</p>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="B"><strong>B - Lancer une tâche dans un conteneur :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>C’est très sympathique de lancer des conteneurs pour les voir inactifs, mais ça semble légèrement contre-productif… Apprenons à lancer un conteneur qui réalise une tâche !</p>
+                                            <ol>
+                                                <li>
+                                                    <p>Lancez la commande <strong>docker run ubuntu:latest /bin/ls</strong></p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-10">
+                                                            <pre class="code-block"><code class="shell"><div>docker run ubuntu:latest /bin/ls</div></code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center mb-5"><img src="assets\DOCKER\B.1.png" class="img-fluid rounded" alt="Alt text"></div>
+                                                    <p>On peut exécuter un programme spécifique à l'intérieur d'un conteneur en utilisant la commande <strong>docker run 'image' 'programme'</strong>. Dans cet exemple, la commande <strong>docker run ubuntu:latest /bin/ls</strong> exécute la commande <strong>ls</strong> à l'intérieur d'un conteneur basé sur l'image <strong>ubuntu:latest</strong>.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Utilisez la commande <strong>docker ps</strong> puis <strong>docker ps -a</strong></p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-10">
+                                                            <pre class="code-block"><code class="shell"><div>docker ps
+docker ps -a</div></code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center mb-5"><img src="assets\DOCKER\B.2.png" class="img-fluid rounded" alt="Alt text"></div>
+                                                </li>
+                                                <li>
+                                                    <p>Utilisez la commande <strong>docker run ubuntu:latest /usr/bin/top -b</strong><br>
+                                                    L’option <strong>-b</strong> de <strong>top</strong> lance cette commande à intervalle de temps régulier. Elle peut être arrêtée avec <strong>Ctrl+c</strong></p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-10">
+                                                            <pre class="code-block"><code class="shell"><div>docker run ubuntu:latest /usr/bin/top -b</div></code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center mb-5"><img src="assets\DOCKER\B.3.png" class="img-fluid rounded" alt="Alt text"></div>
+                                                    <p>Un conteneur fonctionne pendant la durée de l'exécution de la tâche qu'il doit effectuer puis il se termine.<br>
+                                                    Lorsque nous utilisons la commande <strong>docker run ubuntu:latest /usr/bin/top -b</strong>, le conteneur basé sur l'image Ubuntu est démarré et exécute la commande <strong>/usr/bin/top -b</strong> à intervalle de temps régulier.   Cependant, puisque nous n'avons pas spécifié d'action spécifique à exécuter, le conteneur exécutera la commande de manière continue jusqu'à ce qu'elle soit arrêtée manuellement. Dans ce cas, la commande <strong>top</strong> affiche les informations en temps réel sur les processus en cours d'exécution dans le conteneur.</p>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between">
+                    <!-- Pages List on the Left -->
+                    <div class="col-12 col-md-4">
+                        <h5 class="text-primary fw-bolder">Pages</h5>
+                        <ul class="list-unstyled small m-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="resume.html">Curriculum vitæ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="BTS-SIO.html">BTS SIO</a></li>
+                            <li class="nav-item"><a class="nav-link" href="projects.html">Projets</a></li>   
+                            <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
+                            <li class="nav-item"><a class="nav-link" href="documents.html">Documentation</a></li>                 
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-center mb-3 mb-md-0">
+                        <!-- Social Network Links in the Middle -->
+                        <div class="d-flex justify-content-center fs-2 gap-4">
+                            <a class="text-gradient" href="https://www.linkedin.com/in/eli-roisman-34371a261"><i class="bi bi-linkedin"></i></a>
+                            <a class="text-gradient" href="https://discordapp.com/users/74297832861007982"><i class="bi bi-discord"></i></a>
+                            <a class="text-gradient" href="https://github.com/eroisman"><i class="bi bi-github"></i></a>
+                            <a class="text-gradient" href="mailto:eliroisman1818@gmail.com"><i class="bi bi-envelope-fill"></i></a>
+                        </div>
+                    </div>
+                    <!-- Privacy, Terms, Contact on the Right -->
+                    <div class="col-12 col-md-4">
+                        <ul class="list-unstyled small m-0 d-flex justify-content-end">
+                            <li class="me-3"><a class="text-decoration-none" href="#!">Privacy</a></li>
+                            <li class="me-3"><a class="text-decoration-none" href="#!">Terms</a></li>
+                            <li><a class="text-decoration-none" href="#!">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pb-5"></div>
+                <!-- Copyright -->
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <div class="small">Copyright &copy; Eli ROISMAN 2023</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+        <!-- tooltip JS script -->
+        <script>
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+              return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        </script>
+
+        <!-- Back to Top button -->
+        <a href="#top" id="back-to-top" class="btn bg-gradient-primary-to-secondary rounded-circle d-flex justify-content-center align-items-center">
+            <i class="bi bi-arrow-up-short"></i>
+        </a> 
+    </body>
+</html>

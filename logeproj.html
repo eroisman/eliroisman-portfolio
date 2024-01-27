@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="FR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Eli ROISMAN - Logeproj</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/logo5.ico" />
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+        <!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
+        <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
+
+        <!-- CDN link for highlight.js -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <!-- and it's easy to individually load additional languages -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/go.min.js"></script>
+
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100 bg-light add-space-between-words">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html"><img src="assets/Logo/Logo Files/For Web/svg/Color logo - no background.svg" width="200" height="auto" alt="Logo"></a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="resume.html">Curriculum vitæ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="BTS-SIO.html">BTS SIO</a></li>
+                            <li class="nav-item"><a class="nav-link" href="projects.html">Projets</a></li>   
+                            <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
+                            <li class="nav-item"><a class="nav-link" href="documents.html">Documentation</a></li>                 
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Page Content - breadcrumb -->
+            <div class="container px-5 my-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-4 fw-bolder mb-0"><span class="text-gradient d-inline">Logeproj</span></h1>
+                    <div class="breadcrumb-container">
+                        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item fw-bolder text-gradient"><a href="index.html" style="text-decoration: none;">Accueil</a></li>
+                                <li class="breadcrumb-item text-gradient"><a href="projects.html" style="text-decoration: none;">Projets</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Logeproj</li>
+                            </ol>
+                        </nav>    
+                    </div>
+                </div>
+
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-auto col-xl-auto col-xxl-auto">
+                        <h5 class="text-center mb-5">Logeproj est une application de gestion du budget et des subventions destinée aux association. L'application est développée en C# au côté serveur et en Anguler côté client.</h5>
+                        <hr>
+                        <!-- In this page - offcanvas -->
+                        <div class="col-lg-4">
+                            <!-- In this page - offcanvas - Button-->
+                            <button class="btn bg-gradient-primary-to-secondary btn-table-of-contents text-light" 
+                                    type="button" 
+                                    data-bs-toggle="offcanvas" 
+                                    data-bs-target="#offcanvasStart" 
+                                    aria-controls="offcanvasStart">
+                                    <a class="btn bg-gradient-primary-to-secondary btn-table-of-contents text-light" 
+                                        href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Dans cette page">
+                                        <i class="bi bi-list"></i>
+                                    </a>
+                            </button>
+                            <!-- In this page - offcanvas - Navigation -->
+                            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasStart" aria-labelledby="offcanvasStartLabel">
+                                <div class="offcanvas-header text-secondary">
+                                    <h5 id="offcanvasStartLabel">Dans cette page</h5>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body mb-6">
+                                    <nav class="nav flex-column">
+                                        <a class="nav-link" href="#variable">Variable</a>
+                                        <a class="nav-link" href="#variable-scope">La portée d'une variable</a>
+                                        <a class="nav-link" href="#code-block-doc">Block de code</a>
+                                        <a class="nav-link" href="#procedure">Procédure</a>
+                                        <a class="nav-link" href="#fonction">Fonction</a>
+                                        <a class="nav-link" href="#concatenation">Concaténation</a>
+                                        <a class="nav-link" href="#parametre">Paramètre</a>
+                                        <a class="nav-link" href="#parametre-optionnel">Paramètre optionnel</a> 
+                                        <a class="nav-link" href="#objet">Objet</a> 
+                                        <a class="nav-link" href="#table">Tableau</a> 
+                                        <a class="nav-link" href="#new-doc">New</a> 
+                                        <a class="nav-link" href="#calcul-utf-8-et-utf-16">Calcul UTF-8 et UTF-16</a> 
+                                        <a class="nav-link" href="#collection">Collection</a>
+                                        <a class="nav-link" href="#commentaire-public">Commentaire public</a> 
+                                        <a class="nav-link" href="#parametre">Paramètre</a> 
+                                        <a class="nav-link" href="#timestemp">Timestemp</a>
+                                    </nav>
+                                </div>
+                            </div>   
+                        </div>
+
+                        <!-- Section-->
+                        <section class="bg-light py-5">
+                            <h3 class="py-4" id="variable"><strong>Mission :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <p>Proposer un outil de mobilité pour accéder au système d’information de l’entreprise.</p>
+
+                                        <p>Cet outil doit dans un premier temps s’inspirer des fonctions standard de l’ERP JDE. Il pourra être enrichi par les cas d’usage particulier que nous rencontrerons chez nos clients.</p>
+                                            
+                                        <p>Certains “dialogues” utiliserons les codes à barres ou QR Code.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="variable-scope"><strong>La cible :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>PME ou site de taille petite à moyenne de grand groupe, sites pour lesquels une solution de mobilité intégrée à l’ERP sera un avantage.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="variable-scope"><strong>Objectifs mesurables :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <h4 class="py-4" id="variable-scope"><strong>Industrialiser la création d’un dialogue :</strong></h4>
+                                            <p>Le principe est de mettre à disposition des composants « standards » disponibles dans une bibliothèque, composant que l’entreprise pourra brancher rapidement et facilement sur son ERP.</p>
+                                            <p>Cependant deux aspects nous imposent d’optimiser notre mode de conception et de réalisation d’un dialogue :</p> 
+                                            <ul>    
+                                                <li>Notre relative inexpérience. Nous sommes nouveaux sur ce marché. De plus les technologies sont assez récentes pour nous.</li>
+                                                <li>Les demandes d’évolution que ne manqueront pas de nous demander nos clients. Parmi ces demandes certaines seront complètement légitimes et mériteront d’être considérées à la fois pour le client du moment mais aussi pour d’autres entreprises opérant dans des contextes similaires.</li>
+                                            </ul>
+                                            <p>Ainsi est-il stratégique de se mettre en capacité de concevoir et produire des dialogues de manière agile et solide.</p>
+                                            <br>
+                                            <h4 class="py-4" id="variable-scope"><strong>La liste des grandes fonctions de gestion à aborder :</strong></h4>
+                                            <ul>    
+                                                <li>Inventory Management</li>
+                                                <li>Warehouse Management</li>
+                                                <li>Purchase Order Processing</li>
+                                                <li>Sales Order Processing</li>
+                                                <li>Manufacturing Work Orders</li>
+                                                <li>Kanban Manufacturing</li>
+                                                <li>Plant Maintenance</li>
+                                                <li>Fixed Assets</li>
+                                                <li>Human Resources</li>
+                                                <li>Advanced Warehousing</li>
+                                                <li>License Plating</li>
+                                                <li>Voice Recognition</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="code-block-doc"><strong>Block de code :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>Le block de code est définit par une accolade ouvert <strong><code>{</code></strong> et une accolade fermée <strong><code>}</code></strong>.
+                                            Un block de code est construit par une ou plusieurs instructions.
+                                            Une instruction est fini par <strong><code>;</code></strong> ou un block de code.</p>
+                                            <p><strong>Example :</strong></p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-10">
+                                                    <pre class="code-block"><code class="csharp">void MyMethod()
+{
+    int x = 5;
+    int y = 10;
+            
+    if (x > y)
+    {
+        Console.WriteLine("x est plus grand que y");
+        Console.WriteLine("Ceci est une instruction à l'intérieur du bloc 'if'");
+    }
+    else
+    {
+        Console.WriteLine("x est plus petit que y");
+        Console.WriteLine("Ceci est une autre instruction à l'intérieur du bloc 'else'");
+    }
+            
+    Console.WriteLine("Ceci est une instruction en dehors du bloc 'if-else'");
+            
+    for (int i = 0; i < 5; i++)
+    {
+        Console.WriteLine("Ceci est une instruction à l'intérieur de la boucle 'for'");
+        Console.WriteLine("La valeur de i est : " + i);
+    }
+            
+    Console.WriteLine("Ceci est une autre instruction en dehors de la boucle 'for'");
+}</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                            <p>Dans cet exemple, la méthode <strong><code>MyMethod()</code></strong> contient plusieurs blocs de code délimités par des accolades. Les instructions telles que les déclarations de variables, les conditions <strong><code>if-else</code></strong>, les boucles <strong><code>for</code></strong>, et les appels à <strong><code>Console.WriteLine()</code></strong> sont regroupées à l'intérieur des blocs de code.</p>
+                                            <p>La structure des blocs de code permet de regrouper des instructions connexes et de définir leur portée. Les blocs de code facilitent également la lecture et la compréhension du code en organisant logiquement les instructions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="procedure"><strong>Procédure :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>Une procédure est un block de code que l'on nomme et peut être rappeler plusieurs fois.</p>
+                                            <p>En C#, une procédure est une construction de code qui effectue une série d'instructions spécifiques. Elle est également appelée <em>méthode</em>. Une procédure est définie avec un nom, des paramètres éventuels et un bloc de code associé. Elle peut être appelée plusieurs fois à partir d'autres parties du programme pour exécuter les instructions qu'elle contient.</p>
+                                            <p><strong>Example :</strong></p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-10">
+                                                    <pre class="code-block"><code class="csharp">void GreetUser(string name)
+{
+    Console.WriteLine("Bonjour, " + name + " !");
+    Console.WriteLine("Bienvenue dans notre programme.");
+}
+        
+// Appel de la procédure
+GreetUser("John");
+GreetUser("Alice");</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                            <p>Dans cet exemple, nous avons défini une procédure appelée <strong><code>GreetUser</code></strong> qui prend un paramètre <strong><code>name</code></strong> de type string. À l'intérieur de la procédure, nous avons deux instructions <strong><code>Console.WriteLine</code></strong> qui affichent un message de salutation personnalisé pour l'utilisateur.</p>
+                                            <p>Ensuite, nous appelons la procédure <strong><code>GreetUser</code></strong> deux fois avec des arguments différents, ce qui exécute le bloc de code de la procédure à chaque appel et affiche les messages de salutation appropriés.</p>
+                                            <p>Les procédures sont utiles pour réutiliser le code et éviter la duplication. En les définissant une fois, vous pouvez les appeler à plusieurs endroits du programme pour exécuter la même séquence d'instructions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="fonction"><strong>Fonction :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>Une fonction est un bloc de code que l'on nomme et qui renvoie une valeur.</p>
+                                            <p>En C#, une fonction est une construction de code similaire à une procédure, mais elle retourne une valeur après l'exécution de son bloc de code. Une fonction est également appelée <em>méthode</em> avec retour.</p>
+                                            <p><strong>Exemple :</strong></p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-10">
+                                                    <pre class="code-block"><code class="csharp">int AddNumbers(int a, int b)
+{
+    int sum = a + b;
+    return sum;
+}
+            
+// Appel de la fonction et stockage du résultat dans une variable
+int result = AddNumbers(5, 3);
+Console.WriteLine("Le résultat de l'addition est : " + result);</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                            <p>Dans cet exemple, nous avons défini une fonction appelée <strong><code>AddNumbers</code></strong> qui prend deux paramètres <strong><code>a</code></strong> et <strong><code>b</code></strong> de type <strong><code>int</code></strong>. À l'intérieur de la fonction, nous effectuons l'addition des deux nombres et stockons le résultat dans la variable <strong><code>sum</code>.</strong> Ensuite, nous utilisons le mot-clé <strong><code>return</code></strong> pour renvoyer la valeur de <strong><code>sum</code></strong>.</p>
+                                            <p>Ensuite, nous appelons la fonction <strong><code>AddNumbers</code></strong> avec les arguments <strong><code>5</code></strong> et <strong><code>3</code></strong> et stockons le résultat retourné dans la variable <strong><code>result</code></strong>. Enfin, nous affichons le résultat à l'aide de <strong><code>Console.WriteLine</code></strong>.</p>
+                                            <p>Les fonctions sont utilisées lorsque vous avez besoin d'un résultat ou d'une valeur calculée à partir d'un bloc de code spécifique. Elles peuvent être appelées à partir d'autres parties du programme et le résultat peut être utilisé pour effectuer d'autres opérations ou être affiché à l'utilisateur.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="concatenation"><strong>Concaténation :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>La concaténation est le fait d'ajouter une chaîne de caractères à une autre chaîne de caractères.</p>
+                                            <p><strong>Example :</strong></p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-10">
+                                                    <pre class="code-block"><code class="csharp">string firstName = "John";
+string lastName = "Doe";
+            
+string fullName = firstName + " " + lastName;
+            
+Console.WriteLine("Nom complet : " + fullName);</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                            <p>Dans cet exemple, nous avons deux variables <strong><code>firstName</code></strong> et <strong><code>lastName</code></strong> contenant des chaînes de caractères représentant un prénom et un nom. En utilisant l'opérateur de concaténation <strong><code>+</code></strong>, nous combinons les deux chaînes avec un espace entre elles pour former la variable <strong><code>fullName</code></strong>.</p>
+                                            <p>Ensuite, nous utilisons la concaténation pour afficher le résultat final en ajoutant la chaîne <strong><code>&quot;Nom complet : &quot;</code></strong> avant la variable <strong><code>fullName</code></strong> à l'aide de <strong><code>Console.WriteLine</code></strong>.</p>
+                                            <p>La concaténation peut également être utilisée pour combiner des variables avec des valeurs littérales ou pour ajouter des variables à des chaînes de caractères existantes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="parametre"><strong>Paramètre :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>Les paramètres sont des variables déclarées dans les parenthèses d'une procédure ou une fonctionne qui permettent de passer des informations au procédure ou une fonction.</p>
+                                            <p><strong>Example :</strong></p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-10">
+                                                    <pre class="code-block"><code class="csharp">int AddNumbers(int a, int b)
+{
+    int sum = a + b;
+    return sum;
+}
+            
+// Appel de la fonction avec des arguments
+int result = AddNumbers(5, 3);
+Console.WriteLine("Le résultat de l'addition est : " + result);</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                            <p>Dans cet exemple, la fonction <strong><code>AddNumbers</code></strong> prend deux paramètres : <strong><code>a</code></strong> et <strong><code>b</code></strong>, qui sont de type <strong><code>int</code></strong>. Lorsque la fonction est appelée avec des arguments (<strong><code>5</code></strong> et <strong><code>3</code></strong> dans cet exemple), les valeurs des arguments sont assignées aux paramètres <strong><code>a</code></strong> et <strong><code>b</code></strong> respectivement à l'intérieur de la fonction.</p>
+                                            <p>À l'intérieur de la fonction, les paramètres <strong><code>a</code></strong> et <strong><code>b</code></strong> sont utilisés pour effectuer une addition et le résultat est renvoyé à l'aide de l'instruction <strong><code>return</code></strong>.</p>
+                                            <p>Lorsque la fonction est appelée avec des arguments <strong><code>5</code></strong> et <strong><code>3</code></strong>, elle retourne le résultat de l'addition <strong><code>8</code></strong>, qui est ensuite stocké dans la variable <strong><code>result</code></strong> et affiché à l'aide de <strong><code>Console.WriteLine</code></strong>.</p>
+                                            <p>Les paramètres permettent de transmettre des données à une procédure ou une fonction et d'effectuer des opérations en utilisant ces données. Ils permettent de rendre les procédures et les fonctions plus génériques et réutilisables.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="parametre-optionnel"><strong>Paramètre optionnel :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>En C#, un paramètre optionnel (ou <em>&quot;paramètre facultatif&quot;</em>) est un paramètre qui a une valeur par défaut spécifiée dans la signature de la méthode. Cela signifie que lorsqu'un appelant de méthode n'attribue pas de valeur à un tel paramètre, la valeur par défaut sera utilisée à la place.</p>
+                                            <p><strong>Example :</strong></p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-10">
+                                                    <pre class="code-block"><code class="csharp">void GreetUser(string name, string greeting = "Bonjour")
+{
+    Console.WriteLine(greeting + ", " + name + " !");
+}
+            
+// Appel de la méthode sans spécifier le paramètre optionnel
+GreetUser("John");  // Affiche "Bonjour, John !"
+            
+// Appel de la méthode en spécifiant le paramètre optionnel
+GreetUser("Alice", "Salut");  // Affiche "Salut, Alice !"</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                            <p>Dans cet exemple, nous avons défini une méthode <strong><code>GreetUser</code></strong> qui prend deux paramètres : <strong><code>name</code></strong> de type <strong><code>string</code></strong> et <strong><code>greeting</code></strong> de type <strong><code>string</code></strong> avec une valeur par défaut <strong><code>&quot;Bonjour&quot;</code></strong>.</p>
+                                            <p>Lorsque nous appelons la méthode sans spécifier le paramètre optionnel (<strong><code>GreetUser(&quot;John&quot;)</code></strong>), la valeur par défaut &quot;Bonjour&quot; est utilisée, et la méthode affiche &quot;Bonjour, John !&quot; à l'aide de <strong><code>Console.WriteLine</code></strong>.</p>
+                                            <p>Lorsque nous appelons la méthode en spécifiant une valeur pour le paramètre optionnel (<strong><code>GreetUser(&quot;Alice&quot;, &quot;Salut&quot;)</code></strong>), la valeur spécifiée (&quot;Salut&quot;) remplace la valeur par défaut, et la méthode affiche &quot;Salut, Alice !&quot;.</p>
+                                            <p>L'utilisation de paramètres optionnels peut rendre le code plus lisible et plus facile à utiliser, en évitant la nécessité d'écrire des surcharges de méthode pour gérer différents cas où certains paramètres ne sont pas fournis.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="objet"><strong>Objet :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>Un objet est un sous ensemble de code qui contient des propriétés et des méthodes.</p>
+                                            <ul>
+                                            <li><strong>Propriétés :</strong> Les propriétés sont les caractéristiques des objets.</li>
+                                            <li><strong>Méthodes :</strong> Les méthodes c'est sont les actions que les objets peuvent utiliser.</li>
+                                            </ul>
+                                            <p><em><strong>Les propriétés</strong></em> représentent les caractéristiques ou les états de l'objet. Elles sont utilisées pour stocker et accéder aux données spécifiques à l'objet. Par exemple, si nous avons une classe <strong><code>Personne</code></strong>, les propriétés de cette classe pourraient inclure le nom, l'âge, l'adresse, etc. Chaque objet créé à partir de cette classe aura ses propres valeurs pour ces propriétés.</p>
+                                            <p><em><strong>Les méthodes</strong></em>, quant à elles, représentent les actions que les objets peuvent effectuer. Elles définissent le comportement de l'objet et permettent d'effectuer des opérations spécifiques sur les propriétés de l'objet ou d'interagir avec d'autres objets. Par exemple, une méthode <strong><code>AfficherDetails()</code></strong> dans la classe <strong><code>Personne</code></strong> pourrait afficher les détails de la personne, comme son nom, son âge, etc.</p>
+                                            <p><strong>Example :</strong></p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-10">
+                                                    <pre class="code-block"><code class="csharp">class Personne
+{
+    // Propriétés
+    public string Nom { get; set; }
+    public int Age { get; set; }
+
+    // Méthodes
+    public void AfficherDetails()
+    {
+        Console.WriteLine("Nom : " + Nom);
+        Console.WriteLine("Âge : " + Age);
+    }
+}
+            
+// Utilisation de la classe Personne
+Personne personne1 = new Personne();
+personne1.Nom = "John Doe";
+personne1.Age = 25;
+personne1.AfficherDetails();</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                            <p>Dans cet exemple, nous avons une classe <strong><code>Personne</code></strong> qui a deux propriétés : <strong><code>Nom</code></strong> de type <strong><code>string</code></strong> et <strong><code>Age</code></strong> de type <strong><code>int</code></strong>. La classe a également une méthode <strong><code>AfficherDetails()</code></strong> qui affiche les détails de la personne.</p>
+                                            <p>Nous créons ensuite un objet <strong><code>personne1</code></strong> de type <strong><code>Personne</code></strong> en utilisant le constructeur par défaut <strong><code>new Personne()</code></strong>. Nous attribuons des valeurs aux propriétés <strong><code>Nom</code></strong> et <strong><code>Age</code></strong> de <strong><code>personne1</code></strong> et appelons la méthode <strong><code>AfficherDetails()</code></strong> pour afficher les détails de la personne.</p> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="table"><strong>Tableau :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>Un tableau est une zone de la mémoire qui peut contenir plusieurs informations de même type. Les <strong><code>[]</code></strong> dans une variable signifie que c'est un tableau. Les éléments sont placés dans des emplacements mémoire contigus, et l'accès aux éléments se fait à l'aide d'un index.</p>
+                                            <p><strong>Exemple :</strong></p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-10">
+                                                    <pre class="code-block"><code class="csharp">// Déclaration d'un tableau d'entiers
+int[] tableauEntiers;
+
+// Initialisation du tableau avec des valeurs
+tableauEntiers = new int[] { 1, 2, 3, 4, 5 };
+
+// Accès aux éléments du tableau en utilisant l'index
+int premierElement = tableauEntiers[0];  // Valeur : 1
+int deuxiemeElement = tableauEntiers[1]; // Valeur : 2
+
+// Modification d'un élément du tableau
+tableauEntiers[2] = 10;  // Remplace la valeur 3 par 10
+
+// Longueur du tableau
+int longueur = tableauEntiers.Length;  // Valeur : 5
+
+// Parcours du tableau avec une boucle
+for (int i = 0; i < tableauEntiers.Length; i++)
+{
+    Console.WriteLine(tableauEntiers[i]);
+}</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                            <p>Dans cet exemple, nous déclarons un tableau d'entiers en utilisant la syntaxe <strong><code>int[]</code></strong>. Ensuite, nous l'initialisons en lui attribuant une nouvelle instance de tableau contenant les valeurs <strong><code>{ 1, 2, 3, 4, 5 }</code></strong>.</p>
+                                            <p>Pour accéder aux éléments du tableau, nous utilisons l'index entre crochets (<strong><code>[]</code></strong>). Par exemple, <strong><code>tableauEntiers[0]</code></strong> nous donne le premier élément du tableau.</p>
+                                            <p>Nous pouvons également modifier les éléments du tableau en utilisant l'index. Par exemple, <strong><code>tableauEntiers[2] = 10</code></strong> remplace la valeur <strong><code>3</code></strong> par <strong><code>10</code></strong> dans le tableau.</p>
+                                            <p>La propriété <strong><code>Length</code></strong> est utilisée pour obtenir la longueur du tableau, c'est-à-dire le nombre d'éléments qu'il contient.</p>
+                                            <p>Enfin, nous pouvons parcourir le tableau à l'aide d'une boucle <strong><code>for</code></strong> en utilisant l'index pour accéder à chaque élément du tableau et effectuer des opérations.</p>      
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="new-doc"><strong>New :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>En C#, le mot-clé <strong><code>new</code></strong> est utilisé pour instancier un objet à partir d'une classe. Il alloue de la mémoire pour l'objet et appelle son constructeur pour l'initialiser.</p>
+                                            <p><strong>Exemple :</strong></p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-10">
+                                                    <pre class="code-block"><code class="csharp">// Définition d'une classe
+class Personne
+{
+    public string Nom { get; set; }
+    public int Age { get; set; }
+}
+
+// Instanciation d'un objet en utilisant le mot-clé new
+Personne personne1 = new Personne();
+
+// Attribution de valeurs aux propriétés de l'objet
+personne1.Nom = "John Doe";
+personne1.Age = 25;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                            <p>Dans cet exemple, nous avons une classe <strong><code>Personne</code></strong> avec deux propriétés : <strong><code>Nom</code></strong> et <strong><code>Age</code></strong>. Ensuite, nous utilisons le mot-clé <strong><code>new</code></strong> pour créer une nouvelle instance de la classe <strong><code>Personne</code></strong>, que nous stockons dans la variable <strong><code>personne1</code></strong>. Cette opération alloue de la mémoire pour l'objet <strong><code>personne1</code></strong> et appelle le constructeur par défaut de la classe <strong><code>Personne</code></strong>.</p>
+                                            <p>Après avoir instancié l'objet, nous pouvons accéder à ses propriétés et leur attribuer des valeurs spécifiques, comme <strong><code>personne1.Nom = &quot;John Doe&quot;</code></strong> et <strong><code>personne1.Age = 25</code></strong>.</p>
+                                            <p>L'utilisation du mot-clé <strong><code>new</code></strong> est nécessaire pour créer une instance d'un objet à partir d'une classe. Cela permet de réserver l'espace mémoire requis pour stocker l'objet et d'initialiser ses propriétés à des valeurs par défaut, le cas échéant.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="calcul-utf-8-et-utf-16"><strong>Calcul <code>UTF-8</code> et <code>UTF-16</code> :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>les encodages <strong><code>UTF-8</code></strong> et <strong><code>UTF-16</code></strong> sont deux formats de codage des caractères Unicode utilisés pour représenter des caractères dans les systèmes informatiques.</p>
+                                            <ul>
+                                                <li><strong><code>UTF-8</code>  :</strong> 2 puissance 8 = 256<br>
+                                                    L'encodage <strong><code>UTF-8</code></strong> utilise des octets pour représenter les caractères Unicode. Un caractère peut être codé sur 1 à 4 octets en <strong><code>UTF-8</code></strong>, mais la plupart des caractères couramment utilisés sont codés sur 1 à 3 octets.
+                                                </li>
+                                                <li><strong><code>UTF-16</code> :</strong> 2 puissance 16 = 65,536<br>
+                                                L'encodage <strong><code>UTF-16</code></strong> utilise des mots de 16 bits (2 octets) pour représenter les caractères Unicode. Les caractères de base (<strong><code>BMP - Basic Multilingual Plane</code></strong>) sont codés sur 2 octets, tandis que les caractères supplémentaires (en dehors du <strong><code>BMP</code></strong>) sont codés sur 4 octets en utilisant une technique appelée <em>paire de substitution</em>.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="collection"><strong>Collection :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>En C#, les collections sont utilisées pour stocker, organiser et manipuler des ensembles d'éléments de données. Elles offrent une manière pratique et efficace de gérer des données regroupées.</p>
+                                            <p>Voici quelques exemples de classes de collection couramment utilisées en C# :</p>
+                                            <ul>
+                                                <li><strong>Tableaux (<code>arrays</code>) :</strong> Les tableaux sont des structures de données statiques qui permettent de stocker un ensemble d'éléments du même type. La taille d'un tableau est définie lors de sa création et ne peut pas être modifiée par la suite.
+                                                </li>
+                                                <li><strong>Listes (<code>lists</code>) :</strong> Les listes, représentées par la classe <strong><code>List&lt;T&gt;</code></strong>, permettent de stocker une collection d'éléments de manière dynamique. Elles offrent des fonctionnalités telles que l'ajout, la suppression, l'accès par index et la recherche d'éléments.
+                                                </li>
+                                                <li><strong>Dictionnaires (<code>dictionaries</code>) :</strong> Les dictionnaires, représentés par la classe <strong><code>Dictionary&lt;TKey, TValue&gt;</code></strong>, permettent de stocker des paires clé-valeur. Chaque élément est associé à une clé unique, ce qui permet d'accéder rapidement à la valeur correspondante en fonction de la clé.
+                                                </li>
+                                                <li><strong>Ensembles (<code>sets</code>) :</strong> Les ensembles, représentés par la classe <strong><code>HashSet&lt;T&gt;</code></strong>, sont utilisés pour stocker une collection d'éléments uniques, sans ordre spécifique. Ils sont utiles lorsque vous avez besoin de vérifier rapidement l'appartenance d'un élément à un ensemble.
+                                                </li>
+                                                <li><strong>Files d'attente (<code>queues</code>) :</strong> Les files d'attente, représentées par la classe <strong><code>Queue&lt;T&gt;</code></strong>, suivent le principe du premier entré, premier sorti (FIFO). Elles sont couramment utilisées pour implémenter des structures de données telles que les files d'attente dans les algorithmes.
+                                                </li>
+                                                <li><strong>Piles (<code>stacks</code>) :</strong> Les piles, représentées par la classe <strong><code>Stack&lt;T&gt;</code></strong>, suivent le principe du dernier entré, premier sorti (LIFO). Elles sont utilisées dans de nombreux scénarios, tels que la gestion des appels de méthode et les algorithmes de parcours d'arbres.
+                                                </li>
+                                                <li><strong>Arbres (<code>trees</code>) :</strong> Les arbres, tels que les arbres binaires, les arbres de recherche ou les arbres AVL, sont des structures de données hiérarchiques utilisées pour stocker et organiser des données de manière efficace, en permettant des opérations de recherche, d'insertion et de suppression efficaces.</li>
+                                            </ul>
+                                            <p>Ces classes de collection, ainsi que d'autres disponibles dans le Framework <strong>.NET</strong>, offrent des fonctionnalités prêtes à l'emploi pour manipuler et organiser les données en fonction des besoins spécifiques d'un programme.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="commentaire-public"><strong>Commentaire public :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>En C#, pour ajouter un commentaire public (ou commentaire XML) à une méthode, une propriété ou un champ, il faut utiliser les caractères spéciaux <strong><code>///</code></strong> en début de ligne.<br>
+                                            Voici un exemple de commentaire public pour une méthode :</p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-10">
+                                                    <pre class="code-block"><code class="csharp">/// &lt;summary&gt;
+/// Cette méthode calcule la somme de deux entiers.
+/// &lt;/summary&gt;
+/// &lt;param name="a"&gt;Le premier entier.&lt;/param&gt;
+/// &lt;param name="b"&gt;Le deuxième entier.&lt;/param&gt;
+/// &lt;returns&gt;La somme des deux entiers.&lt;/returns&gt;
+public int CalculerSomme(int a, int b)
+{
+    return a + b;
+}</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                            <p>Dans cet exemple, le commentaire public commence par <strong><code>///</code></strong>, suivi d'une balise <strong><code>&lt;summary&gt;</code></strong> qui décrit brièvement la fonction de la méthode. Ensuite, il y a deux balises <strong><code>&lt;param&gt;</code></strong> qui décrivent les paramètres de la méthode et une balise <strong><code>&lt;returns&gt;</code></strong> qui décrit la valeur de retour de la méthode.</p>
+                                            <p>Voici quelques balises couramment utilisées dans les commentaires publics en C# :</p>
+                                            <ul>
+                                                <li><strong><code>&lt;summary&gt;</code> :</strong> Cette balise est utilisée pour fournir une description succincte de la méthode, de la propriété, du champ, etc. C'est généralement le premier élément dans un commentaire public et il est destiné à donner un aperçu global de l'élément documenté.
+                                                </li>
+                                                <li><strong><code>&lt;param&gt;</code> :</strong> Cette balise est utilisée pour documenter les paramètres d'une méthode ou d'une fonction. Elle est utilisée avec l'attribut <strong><code>name</code></strong> pour spécifier le nom du paramètre et fournir une description de son rôle.
+                                                </li>
+                                                <li><strong><code>&lt;returns&gt;</code> :</strong> Cette balise est utilisée pour documenter la valeur de retour d'une méthode ou d'une fonction. Elle est utilisée pour spécifier le type de valeur renvoyé et fournir une description de la signification de cette valeur de retour.
+                                                </li>
+                                                <li><strong><code>&lt;see&gt;</code> :</strong> Cette balise est utilisée pour créer des liens vers d'autres éléments du code, tels que des méthodes, des propriétés, des classes, etc. Elle est souvent utilisée pour établir des relations entre différentes parties du code documenté.
+                                                </li>
+                                                <li><strong><code>&lt;example&gt;</code> :</strong> Cette balise est utilisée pour fournir des exemples d'utilisation de l'élément documenté. Elle peut contenir du code qui illustre comment utiliser correctement l'élément.</li>
+                                            </ul>
+                                            <p>Les commentaires publics sont utiles pour documenter le code et fournir des informations utiles aux développeurs qui utilisent une bibliothèque ou une API. Les commentaires publics sont également utilisés par les outils de documentation automatique pour générer des documents d'aide ou des fichiers XML de documentation.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="timestemp"><strong>Timestemp :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>Le <strong><code>timestemp</code></strong> est un nombre de secondes et millisecondes écoulées depuis une date de référence.<br>
+                                                Les dates en informatique sont géré par un <strong><code>timestemp</code></strong>.</p>
+                                            <p>La date de référence la plus couramment utilisée est appelée &quot;<strong><code>Unix Epoch</code></strong>&quot;, qui est fixée au <strong>1er janvier 1970 à 00:00:00 UTC</strong>. A partir de cette date, le nombre de secondes ou de millisecondes écoulées est calculé pour représenter une date spécifique.</p>
+                                            <p>Les <strong><code>timestamps</code></strong> sont souvent utilisés pour effectuer des opérations de calcul de durée, comparer des dates, effectuer des conversions de format de date et d'autres opérations liées au temps. Les systèmes d'exploitation, les bases de données et de nombreux langages de programmation fournissent des fonctionnalités pour travailler avec les <strong><code>timestamps</code></strong>.</p>
+                                            <p>Voici un exemple de code en C# pour obtenir le <strong><code>timestamp</code></strong> actuel en secondes et en millisecondes :</p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-10">
+                                                    <pre class="code-block"><code class="csharp">DateTime now = DateTime.Now;
+
+// Obtenir le timestamp en secondes
+long timestampSeconds = new DateTimeOffset(now).ToUnixTimeSeconds();
+
+// Obtenir le timestamp en millisecondes
+long timestampMilliseconds = new DateTimeOffset(now).ToUnixTimeMilliseconds();
+
+Console.WriteLine("Timestamp en secondes : " + timestampSeconds);
+Console.WriteLine("Timestamp en millisecondes : " + timestampMilliseconds);</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                            <p>Dans cet exemple, la classe <strong><code>DateTime.Now</code></strong> est utilisée pour obtenir la date et l'heure actuelles. Ensuite, les méthodes <strong><code>ToUnixTimeSeconds()</code></strong> et <strong><code>ToUnixTimeMilliseconds()</code></strong> de la classe <strong><code>DateTimeOffset</code></strong> sont utilisées pour convertir la date en timestamps en secondes et en millisecondes respectivement.</p>
+                                            <p><strong>Pour savoir si une année est bissextile, il faut vérifier :</strong></p>
+                                            <ul>
+                                                <li>Si l'année est divisible par 4, mais non divisible par 100, ou si elle est divisible par 400 = l'année est bissextile.</li>
+                                                <li>Sinon = l'année n'est pas bissextile.</li>
+                                            </ul>
+                                            <p><strong>Exemple en C# :</strong></p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-10">
+                                                    <pre class="code-block"><code class="csharp">public static bool EstBissextile(int annee)
+{
+    if (annee % 4 == 0 && (annee % 100 != 0 || annee % 400 == 0))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                            <p>Dans cette fonction, on vérifie d'abord si l'année est divisible par 4. Si c'est le cas, on vérifie ensuite si elle est divisible par 100 ou par 400. Si elle est divisible par 100 mais pas par 400, alors elle n'est pas bissextile. Sinon, si elle est divisible par 400, alors elle est bissextile. Sinon, si elle n'est pas divisible par 4, alors elle n'est pas bissextile.</p>
+                                            <p>On peut ensuite utiliser cette fonction pour vérifier si une année donnée est bissextile, comme ceci :</p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-10">
+                                                    <pre class="code-block"><code class="csharp">int annee = 2023;
+if (EstBissextile(annee))
+{
+    Console.WriteLine("{0} est bissextile", annee);
+}
+else
+{
+    Console.WriteLine("{0} n'est pas bissextile", annee);
+}</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>    
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between">
+                    <!-- Pages List on the Left -->
+                    <div class="col-12 col-md-4">
+                        <h5 class="text-primary fw-bolder">Pages</h5>
+                        <ul class="list-unstyled small m-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="resume.html">Curriculum vitæ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="BTS-SIO.html">BTS SIO</a></li>
+                            <li class="nav-item"><a class="nav-link" href="projects.html">Projets</a></li>   
+                            <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
+                            <li class="nav-item"><a class="nav-link" href="documents.html">Documentation</a></li>                 
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-center mb-3 mb-md-0">
+                        <!-- Social Network Links in the Middle -->
+                        <div class="d-flex justify-content-center fs-2 gap-4">
+                            <a class="text-gradient" href="https://www.linkedin.com/in/eli-roisman-34371a261"><i class="bi bi-linkedin"></i></a>
+                            <a class="text-gradient" href="https://discordapp.com/users/74297832861007982"><i class="bi bi-discord"></i></a>
+                            <a class="text-gradient" href="https://github.com/eroisman"><i class="bi bi-github"></i></a>
+                            <a class="text-gradient" href="mailto:eliroisman1818@gmail.com"><i class="bi bi-envelope-fill"></i></a>
+                        </div>
+                    </div>
+                    <!-- Privacy, Terms, Contact on the Right -->
+                    <div class="col-12 col-md-4">
+                        <ul class="list-unstyled small m-0 d-flex justify-content-end">
+                            <li class="me-3"><a class="text-decoration-none" href="#!">Privacy</a></li>
+                            <li class="me-3"><a class="text-decoration-none" href="#!">Terms</a></li>
+                            <li><a class="text-decoration-none" href="#!">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pb-5"></div>
+                <!-- Copyright -->
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <div class="small">Copyright &copy; Eli ROISMAN 2023</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+        <!-- tooltip JS script -->
+        <script>
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+              return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        </script>
+
+        <!-- Back to Top button -->
+        <a href="#top" id="back-to-top" class="btn bg-gradient-primary-to-secondary rounded-circle d-flex justify-content-center align-items-center">
+            <i class="bi bi-arrow-up-short"></i>
+        </a> 
+    </body>
+</html>

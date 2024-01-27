@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="FR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Eli ROISMAN - Base de données</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/logo5.ico" />
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+        <!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
+        <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
+
+        <!-- CDN link for highlight.js -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <!-- and it's easy to individually load additional languages -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/go.min.js"></script>
+
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100 bg-light add-space-between-words">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html"><img src="assets/Logo/Logo Files/For Web/svg/Color logo - no background.svg" width="200" height="auto" alt="Logo"></a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="resume.html">Curriculum vitæ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="BTS-SIO.html">BTS SIO</a></li>
+                            <li class="nav-item"><a class="nav-link" href="projects.html">Projets</a></li>   
+                            <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
+                            <li class="nav-item"><a class="nav-link" href="documents.html">Documentation</a></li>                 
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Page Content - breadcrumb -->
+            <div class="container px-5 my-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-4 fw-bolder mb-0"><span class="text-gradient d-inline">Bases de données</span></h1>
+                    <div class="breadcrumb-container">
+                        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item fw-bolder text-gradient"><a href="index.html" style="text-decoration: none;">Home</a></li>
+                                <li class="breadcrumb-item text-gradient"><a href="documents.html" style="text-decoration: none;">Documentation</a></li>
+                                <li class="breadcrumb-item text-gradient"><a href="development.html" style="text-decoration: none;">Développement</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Bases de données</li>
+                            </ol>
+                        </nav>    
+                    </div>
+                </div>
+
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-auto col-xl-auto col-xxl-auto">
+                        <h2 class="py-5 text-center"><strong>Bases de données</strong></h2>
+                        <h5 class="text-center mb-5">Comment créer une base de données (PostgreSQL) et comment utiliser et manipuler des requêtes SQL.</h5>
+                        <hr>
+                        <!-- In this page - offcanvas -->
+                        <div class="col-lg-4">
+                            <!-- In this page - offcanvas - Button-->
+                            <button class="btn bg-gradient-primary-to-secondary btn-table-of-contents text-light" 
+                                    type="button" 
+                                    data-bs-toggle="offcanvas" 
+                                    data-bs-target="#offcanvasStart" 
+                                    aria-controls="offcanvasStart">
+                                    <a class="btn bg-gradient-primary-to-secondary btn-table-of-contents text-light" 
+                                        href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Dans cette page">
+                                        <i class="bi bi-list"></i>
+                                    </a>
+                            </button>
+                            <!-- In this page - offcanvas - Navigation -->
+                            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasStart" aria-labelledby="offcanvasStartLabel">
+                                <div class="offcanvas-header text-secondary">
+                                    <h5 id="offcanvasStartLabel">Dans cette page</h5>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <nav class="nav flex-column">
+                                        <a class="nav-link" href="#the-bdd">Le BDD</a>
+                                        <a class="nav-link" href="#softwers">Les Logiciels utilisés</a>
+                                        <a class="nav-link" href="#on-bdd">Sur BDD</a>
+                                            <ul>
+                                                <li><a class="nav-link" href="#we-do">On peux faire</a></li>
+                                                <li><a class="nav-link" href="#we-find">On trouve</a></li>
+                                            </ul>
+                                        <a class="nav-link" href="#sql-commands">Les commandes SQL</a>
+                                        <a class="nav-link" href="#sql-functions">Les fonctions en SQL</a>
+                                        <a class="nav-link" href="#sql-joins">Les jointures en SQL</a>
+                                        <a class="nav-link" href="#sql-bdd-vocabulary">Vocabulaire BDD \ SQL</a> 
+                                    </nav>
+                                </div>
+                            </div>   
+                        </div>
+
+                        <!-- Section-->
+                        <section class="bg-light py-5">
+                            <h3 class="py-4" id="the-bdd"><strong>Le BDD :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <p><strong>Serveur :</strong> PostgreSQL<br>
+                                            <strong>Client :</strong> DBeaver<br>
+                                            <strong>Local host :</strong> 127.0.0.1<br>
+                                            Connection par TCP - IP (adresse IP <strong>127.0.0.1</strong>, Port <strong>5432</strong>) entre PostgreSQL et DBeaver.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="softwers"><strong>Les Logiciels utilisés :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12"><div><ul>
+                                            <li>
+                                                <p><strong>SGBDR</strong> (<strong>S</strong>ystème de <strong>G</strong>estion de <strong>B</strong>ase de <strong>D</strong>onnées <strong>R</strong>elationnelles) <strong>:</strong>
+                                                Il s'agit d'un logiciel qui permet de créer, stocker, gérer et manipuler des bases de données relationnelles.<br><br>
+                                                <em><strong>Exemples de SGBDR populaires :</strong></em> PostgreSQL, MySQL, Oracle Database, Microsoft SQL Server, etc.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p><strong>DBeaver :</strong>
+                                                DBeaver est un outil de gestion de base de données universel et open-source.
+                                                Il prend en charge de nombreux SGBDR, y compris PostgreSQL.
+                                                Il fournit une interface graphique conviviale pour créer, modifier et exécuter des requêtes sur les données stockées dans une base de données.
+                                                DBeaver offre également des fonctionnalités avancées telles que la gestion des connexions, l'édition des schémas, la visualisation des données, etc.<br><br>
+                                                <em><strong>Pour connecter DBeaver à PostgreSQL (version 12) :</strong></em>
+                                                </p>
+                                                <ul>
+                                                    <li>Lancez DBeaver et cliquez sur &quot;Nouvelle connexion&quot; pour créer une nouvelle connexion à la base de données.</li>
+                                                    <li>Sélectionnez PostgreSQL comme type de base de données.</li>
+                                                    <li>Entrez les détails de connexion tels que l'hôte, le port, le nom de la base de données, le nom d'utilisateur et le mot de passe appropriés pour votre instance de PostgreSQL.</li>
+                                                    <li>Testez la connexion pour vérifier qu'elle fonctionne correctement.</li>
+                                                    <li>Une fois la connexion établie, vous pouvez utiliser DBeaver pour créer, modifier et interroger les données dans votre base de données PostgreSQL.</li>
+                                                </ul><br>
+                                                <p><em><strong>La syntaxe en PostgreSQL :</strong></em>
+                                                </p>
+                                                <ul>
+                                                    <li><strong><code>int</code></strong> est un type de données dans PostgreSQL qui représente un nombre entier.</li>
+                                                    <li><strong><code>varchar(255)</code></strong> est un type de données dans PostgreSQL qui permet de stocker des chaînes de caractères jusqu'à une longueur maximale de 255 caractères.</li>
+                                                    <li><strong><code>date</code></strong> est un type de données dans PostgreSQL qui stocke une date spécifique.</li>
+                                                    <li>En PostgreSQL, les noms d'objets (tables, colonnes, etc.) sont sensibles à la casse par défaut. Il est recommandé d'utiliser des noms en minuscules et d'éviter les majuscules, les espaces et les caractères spéciaux dans les noms d'objets.</li>
+                                                    <li><strong><code>gerer_commande</code></strong> est un exemple de nom d'objet (table, vue, etc.) en utilisant la convention de nommage recommandée en PostgreSQL.</li>
+                                                </ul>
+                                            </li></ul></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="on-bdd"><strong>Sur BDD :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12"><div>
+                                            <h5 id="we-do"><strong>On peux faire :</strong></h5>
+                                            <ul>
+                                                <li>Stocker.</li>
+                                                <li>Exploiter.</li>
+                                                <li>Sauvegarder.</li>
+                                                <li>Sécuriser.</li>
+                                                <li>Organiser.</li>
+                                            </ul>
+                                            <br>
+                                            <h5 id="we-find"><strong>On trouve :</strong></h5>
+                                            <ul>
+                                                <li>
+                                                    <p><strong>Tableau (<code>Table</code>) :</strong> Un tableau, également appelé &quot;table&quot;, représente une structure de données tabulaire dans une base de données. Il est composé de lignes et de colonnes et est utilisé pour organiser et stocker les données de manière structurée.<br>
+                                                    <em>Exemple de création d'un tableau en SQL :</em></p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-8">
+                                                            <pre class="code-block"><code class="sql">CREATE TABLE Utilisateurs (
+    id INT PRIMARY KEY,
+    nom VARCHAR(50),
+    age INT,
+    email VARCHAR(100)
+);</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div> 
+                                                </li>
+                                                <li>
+                                                <p><strong>Colonne (<code>Column</code>) :</strong> Une colonne est une partie d'un tableau qui définit un attribut spécifique pour chaque enregistrement. Chaque colonne a un nom et un type de données qui détermine le type de valeurs pouvant être stockées dans cette colonne.<br>
+                                                    <em>Exemple de création d'une colonne dans un tableau existant en SQL :</em></p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-8">
+                                                            <pre class="code-block"><code class="sql">ALTER TABLE Utilisateurs
+ADD COLUMN adresse VARCHAR(200);</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p><strong>Ligne (<code>Row</code>) :</strong> Une ligne représente un enregistrement (ou occurrences) spécifique dans un tableau. Chaque ligne contient des valeurs pour chaque colonne du tableau, représentant les données associées à cet enregistrement.<br>
+                                                    <em>Exemple d'insertion d'une ligne dans un tableau en SQL :</em></p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-8">
+                                                            <pre class="code-block"><code class="sql">INSERT INTO Utilisateurs (id, nom, age, email)
+VALUES (1, 'Jean', 30, 'jean@example.com');</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p><strong>Clé primaire (<code>Primary Key</code>) :</strong> Une clé primaire est une colonne ou un ensemble de colonnes qui identifie de manière unique chaque enregistrement dans un tableau. Elle garantit l'unicité et l'identification sans ambiguïté des enregistrements. La clé primaire est utilisée pour référencer les enregistrements dans d'autres tables.<br>
+                                                    <em>Exemple de création d'une clé primaire lors de la création du tableau en SQL :</em></p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-8">
+                                                            <pre class="code-block"><code class="sql">CREATE TABLE Utilisateurs (
+    id INT PRIMARY KEY,
+    nom VARCHAR(50),
+    age INT,
+    email VARCHAR(100)
+);</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div> 
+                                                </li>
+                                                <li>
+                                                    <p><strong>Clé étrangère (<code>Foreign Key</code>) :</strong> Une clé étrangère est une colonne (ou un ensemble de colonnes) dans une table qui fait référence à la clé primaire d'une autre table. Elle établit une relation entre les deux tables. La clé étrangère est utilisée pour maintenir l'intégrité référentielle et permet de lier les données entre différentes tables.<br>
+                                                    <em>Exemple de création d'une clé étrangère en SQL :</em></p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-8">
+                                                            <pre class="code-block"><code class="sql">CREATE TABLE Commandes (
+    id INT PRIMARY KEY,
+    utilisateur_id INT,
+    produit VARCHAR(50),
+    quantite INT,
+    FOREIGN KEY (utilisateur_id) REFERENCES Utilisateurs(id)
+);</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                    <p>Dans cet exemple, la colonne <strong><code>utilisateur_id</code></strong> dans le tableau <strong><code>Commandes</code></strong> est une clé étrangère qui fait référence à la clé primaire <strong><code>id</code></strong> dans le tableau <strong><code>Utilisateurs</code></strong>. Cela permet de lier les commandes à un utilisateur spécifique.</p>
+                                                </li>
+                                            </ul>
+                                        </div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="sql-commands"><strong>Les commandes SQL :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12"><ul>
+                                            <li>
+                                                <p><strong>SELECT :</strong> permet de sélectionner des colonnes dans une table.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT nom, age FROM Utilisateurs;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête sélectionne les colonnes <strong><code>nom</code></strong> et <strong><code>age</code></strong> dans la table <strong><code>Utilisateurs</code></strong>.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>FROM :</strong> indique la table à partir de laquelle les données doivent être sélectionnées.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT * FROM Utilisateurs;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête sélectionne toutes les colonnes de la table <strong><code>Utilisateurs</code></strong>.</p><br> 
+                                            </li>
+                                            <li>
+                                                <p><strong>WHERE :</strong> permet de filtrer les lignes en fonction d'une condition.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT nom, age FROM Utilisateurs WHERE age > 30;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête sélectionne les colonnes <strong><code>nom</code></strong> et <strong><code>age</code></strong> dans la table <strong><code>Utilisateurs</code></strong> pour les lignes où l'âge est supérieur à 30.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>INSERT INTO :</strong> permet d'insérer des données dans une table.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">INSERT INTO Utilisateurs (nom, age) VALUES ('Alice', 25);</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête insère une nouvelle ligne dans la table <strong><code>Utilisateurs</code></strong> avec les valeurs 'Alice' pour la colonne <strong><code>nom</code></strong> et 25 pour la colonne <strong><code>age</code></strong>.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>UPDATE :</strong> permet de mettre à jour des données existantes dans une table.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">UPDATE Utilisateurs SET age = 35 WHERE nom = 'Jean';</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête met à jour la valeur de la colonne <strong><code>age</code></strong> à 35 dans la table <strong><code>Utilisateurs</code></strong> pour les lignes où le nom est 'Jean'.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>DELETE :</strong> permet de supprimer des lignes d'une table.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">DELETE FROM Utilisateurs WHERE age < 25;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête supprime les lignes de la table <strong><code>Utilisateurs</code></strong> où l'âge est inférieur à 25.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>CREATE :</strong> permet de créer une table ou une base de données.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">CREATE TABLE Employes (
+    id INT PRIMARY KEY,
+    nom VARCHAR(50),
+    salaire DECIMAL(10, 2)
+);</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête crée une nouvelle table <strong><code>Employes</code></strong> avec les colonnes <strong><code>id</code></strong> (clé primaire), <strong><code>nom</code></strong> et <strong><code>salaire</code></strong>.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>ALTER :</strong> permet de modifier la structure d'une table existante.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">ALTER TABLE Utilisateurs ADD COLUMN adresse VARCHAR(200);</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête ajoute une nouvelle colonne <strong><code>adresse</code></strong> de type <strong><code>VARCHAR(200)</code></strong> à la table <strong><code>Utilisateurs</code></strong>.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>DROP :</strong> permet de supprimer une table ou une base de données.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">DROP TABLE Utilisateurs;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête supprime la table <strong><code>Utilisateurs</code></strong> de la base de données.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>JOIN :</strong> permet de combiner les lignes d'une ou plusieurs tables en fonction d'une correspondance entre les valeurs de certaines colonnes. Il existe différents types de jointures (INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN).</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT Utilisateurs.nom, Commandes.produit
+FROM Utilisateurs
+JOIN Commandes ON Utilisateurs.id = Commandes.utilisateur_id;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête combine les tables <strong><code>Utilisateurs</code></strong> et <strong><code>Commandes</code></strong> en utilisant la correspondance entre les colonnes <strong><code>id</code></strong> dans <strong><code>Utilisateurs</code></strong> et <strong><code>utilisateur_id</code></strong> dans <strong><code>Commandes</code></strong>. Elle sélectionne les noms des utilisateurs et les produits associés à leurs commandes.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>GROUP BY :</strong> permet de regrouper les lignes d'une table en fonction d'une ou plusieurs colonnes.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT pays, COUNT(*) as total_clients
+FROM Clients
+GROUP BY pays;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête regroupe les clients par pays dans la table <strong><code>Clients</code></strong> et compte le nombre total de clients dans chaque pays.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>HAVING :</strong> utilisé conjointement avec GROUP BY pour filtrer les groupes en fonction d'une condition.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT pays, COUNT(*) as total_clients
+FROM Clients
+GROUP BY pays
+HAVING COUNT(*) > 10;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête regroupe les clients par pays dans la table <strong><code>Clients</code></strong>, compte le nombre total de clients dans chaque pays, et filtre les groupes ayant plus de 10 clients.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>ORDER BY :</strong> permet de trier les lignes d'une table en fonction d'une ou plusieurs colonnes.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT nom, age
+FROM Utilisateurs
+ORDER BY age DESC</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête sélectionne les noms et les âges des utilisateurs dans la table <strong><code>Utilisateurs</code></strong> et les trie par ordre décroissant d'âge (<strong><code>ASC</code></strong> pour ordre croissant).</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>LIMIT :</strong> permet de limiter le nombre de lignes retournées par une requête.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT nom, age
+FROM Utilisateurs
+LIMIT 5;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête sélectionne les noms et les âges des 5 premiers utilisateurs dans la table <strong><code>Utilisateurs</code></strong>.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>UNION :</strong> permet de combiner les résultats de plusieurs requêtes SELECT.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT nom FROM Utilisateurs
+UNION
+SELECT nom FROM Clients;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête combine les résultats des requêtes <strong><code>SELECT</code></strong> pour les colonnes <strong><code>nom</code></strong> dans les tables <strong><code>Utilisateurs</code></strong> et <strong><code>Clients</code></strong>, en supprimant les doublons.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>DISTINCT :</strong> permet de sélectionner uniquement les valeurs distinctes d'une colonne.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT DISTINCT pays
+FROM Clients;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête sélectionne les pays distincts des clients dans la table <strong><code>Clients</code></strong>, en éliminant les doublons.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>LIKE :</strong> utilisé dans une clause WHERE pour rechercher des valeurs correspondant à un modèle de chaîne de caractères.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT nom
+FROM Utilisateurs
+WHERE nom LIKE 'A%';</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête sélectionne les noms des utilisateurs dans la table <strong><code>Utilisateurs</code></strong> qui commencent par la lettre 'A'.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>BETWEEN :</strong> utilisé dans une clause WHERE pour spécifier une plage de valeurs pour une colonne.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT nom, age
+FROM Utilisateurs
+WHERE age BETWEEN 25 AND 35;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête sélectionne les noms et les âges des utilisateurs dans la table <strong><code>Utilisateurs</code></strong> dont l'âge se situe entre 25 et 35 inclusivement.</p>
+                                            </li></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <hr>
+
+                            <h3 class="py-4" id="sql-functions"><strong>Les fonctions en SQL :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12"><ul>
+                                            <li>
+                                                <p><strong>COUNT :</strong> permet de compter le nombre de lignes d'une table ou d'une colonne.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT COUNT(*) as total_utilisateurs FROM Utilisateurs;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête compte le nombre total de lignes dans la table <strong><code>Utilisateurs</code></strong> et renvoie le résultat dans la colonne <strong><code>total_utilisateurs</code></strong>.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>SUM :</strong> permet de calculer la somme d'une colonne.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT SUM(quantite) as total_quantite FROM Commandes;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête calcule la somme de la colonne <strong><code>quantite</code></strong> dans la table <strong><code>Commandes</code></strong> et renvoie le résultat dans la colonne <strong><code>total_quantite</code></strong>.</p>
+                                                <br>
+                                            </li>
+                                            <li>
+                                                <p><strong>AVG :</strong> permet de calculer la moyenne d'une colonne.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT AVG(age) as moyenne_age FROM Utilisateurs;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête calcule la moyenne de la colonne <strong><code>age</code></strong> dans la table <strong><code>Utilisateurs</code></strong> et renvoie le résultat dans la colonne <strong><code>moyenne_age</code></strong>.
+                                                </p><br>
+                                            </li>
+                                            <li>
+                                                <p><strong>MIN :</strong> permet de sélectionner la valeur minimale d'une colonne.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT MIN(salaire) as salaire_min FROM Employes;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête sélectionne la valeur minimale de la colonne <strong><code>salaire</code></strong> dans la table <strong><code>Employes</code></strong> et renvoie le résultat dans la colonne <strong><code>salaire_min</code></strong>.
+                                                </p><br>
+                                            </li>
+                                            <li>
+                                                <p><strong>MAX :</strong> permet de sélectionner la valeur maximale d'une colonne.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT MAX(salaire) as salaire_max FROM Employes;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête sélectionne la valeur maximale de la colonne <strong><code>salaire</code></strong> dans la table <strong><code>Employes</code></strong> et renvoie le résultat dans la colonne <strong><code>salaire_max</code></strong>.
+                                                </p><br>
+                                            </li>
+                                            <li>
+                                                <p><strong>CONCAT :</strong> permet de concaténer des chaînes de caractères.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT CONCAT(prenom, ' ', nom) as nom_complet FROM Utilisateurs;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête concatène les colonnes <strong><code>prenom</code></strong> et <strong><code>nom</code></strong> dans la table <strong><code>Utilisateurs</code></strong> pour former le nom complet et renvoie le résultat dans la colonne <strong><code>nom_complet</code></strong>.
+                                                </p><br>
+                                            </li>
+                                            <li>
+                                                <p><strong>LENGTH :</strong> permet de calculer la longueur d'une chaîne de caractères.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT nom, LENGTH(nom) as longueur_nom FROM Utilisateurs;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête sélectionne les noms des utilisateurs dans la table <strong><code>Utilisateurs</code></strong> et calcule la longueur de chaque nom, renvoyant le résultat dans la colonne <strong><code>longueur_nom</code></strong>.
+                                                </p><br>
+                                            </li>
+                                            <li>
+                                                <p><strong>LOWER / UPPER :</strong> permet de convertir une chaîne de caractères en minuscules / majuscules.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT nom, LOWER(nom) as nom_minuscules, UPPER(nom) as nom_majuscules FROM Utilisateurs;&nbsp; &nbsp;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête sélectionne les noms des utilisateurs dans la table <strong><code>Utilisateurs</code></strong> et les renvoie en minuscules dans la colonne <strong><code>nom_minuscules</code></strong> et en majuscules dans la colonne <strong><code>nom_majuscules</code></strong>.
+                                                </p><br>
+                                            </li>
+                                            <li>
+                                                <p><strong>SUBSTRING :</strong> permet de sélectionner une partie d'une chaîne de caractères.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT SUBSTRING(description, 1, 10) as extrait_description FROM Produits;&nbsp; &nbsp;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête sélectionne la colonne <strong><code>description</code></strong> dans la table <strong><code>Produits</code></strong> et extrait les 10 premiers caractères de chaque description, renvoyant le résultat dans la colonne <strong><code>extrait_description</code></strong>.
+                                                </p><br>
+                                            </li>
+                                            <li>
+                                                <p><strong>NOW() :</strong> permet de récupérer la date et l'heure actuelle.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT NOW() as date_heure_actuelles;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête récupère la date et l'heure actuelles du système de la base de données et renvoie le résultat dans la colonne <strong><code>date_heure_actuelles</code></strong>.
+                                                </p><br>
+                                            </li>
+                                            <li>
+                                                <p><strong>CAST() :</strong> permet de convertir une expression d'un type de données en un autre type.</p>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <pre class="code-block"><code class="sql">SELECT CAST(prix AS DECIMAL(10, 2)) as prix_decimal FROM Produits;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                    </div>
+                                                </div>
+                                                <p>Cette requête convertit la colonne <strong><code>prix</code></strong> dans la table <strong><code>Produits</code></strong> en un type de données <strong><code>DECIMAL</code></strong> avec une précision de 10 chiffres et 2 décimales, renvoyant le résultat dans la colonne <strong><code>prix_decimal</code></strong>.</p>
+                                            </li></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <hr>
+
+                            <h3 class="py-4" id="sql-joins"><strong>Les jointures en SQL :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>Il existe différents types de jointures en SQL qui permettent de combiner les données de plusieurs tables en fonction des valeurs communes de leurs colonnes. Voici une liste des types de jointures les plus courants :</p><br>
+                                            <ul>
+                                                <li>
+                                                    <p>Jointure interne (<strong>INNER JOIN</strong>) : La jointure interne sélectionne les lignes qui ont une correspondance dans les deux tables. Les données qui ne correspondent pas ne sont pas incluses dans le résultat de la jointure.
+                                                    Syntaxe :</p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-8">
+                                                            <pre class="code-block"><code class="sql">SELECT * FROM table1 INNER JOIN table2 ON table1.colonne = table2.colonne;&nbsp; &nbsp;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                </li><br>
+                                                <li>
+                                                    <p>Jointure externe gauche (<strong>LEFT OUTER JOIN</strong>) : La jointure externe gauche retourne toutes les lignes de la table de gauche et les lignes correspondantes de la table de droite. Si une ligne de la table de gauche n'a pas de correspondance dans la table de droite, la colonne correspondante de la table de droite est remplie de valeurs NULL.
+                                                    Syntaxe :</p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-8">
+                                                            <pre class="code-block"><code class="sql">SELECT * FROM table1 LEFT OUTER JOIN table2 ON table1.colonne = table2.colonne;&nbsp; &nbsp;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                </li><br>
+                                                <li>
+                                                    <p>Jointure externe droite (<strong>RIGHT OUTER JOIN</strong>) : La jointure externe droite est similaire à la jointure externe gauche, mais retourne toutes les lignes de la table de droite et les lignes correspondantes de la table de gauche.
+                                                    Syntaxe :</p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-8">
+                                                            <pre class="code-block"><code class="sql">SELECT * FROM table1 RIGHT OUTER JOIN table2 ON table1.colonne = table2.colonne;&nbsp; &nbsp;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                </li><br>
+                                                <li>
+                                                    <p>Jointure complète (<strong>FULL OUTER JOIN</strong>) : La jointure complète retourne toutes les lignes de la table de gauche et de la table de droite. Si une ligne n'a pas de correspondance dans l'autre table, la colonne correspondante est remplie de valeurs NULL.
+                                                    Syntaxe :</p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-8">
+                                                            <pre class="code-block"><code class="sql">SELECT * FROM table1 FULL OUTER JOIN table2 ON table1.colonne = table2.colonne;&nbsp; &nbsp;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                </li><br>
+                                                <li>
+                                                    <p>Jointure croisée (<strong>CROSS JOIN</strong>) : La jointure croisée combine chaque ligne de la première table avec chaque ligne de la deuxième table, produisant un produit cartésien.
+                                                    Syntaxe :</p>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-8">
+                                                            <pre class="code-block"><code class="sql">SELECT * FROM table1 CROSS JOIN table2;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                        </div>
+                                                    </div>
+                                                </li><br>
+                                            </ul>
+                                            <p><img src="https://blog.kakaocdn.net/dn/Ltzj9/btqxjAa3bEz/ezkzXBYDYOQeohPwyOKeyk/img.png" class="img-fluid rounded" alt="Alt text"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="sql-bdd-vocabulary"><strong>Vocabulaire BDD \ SQL :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <h5><strong>Requête paramétrée :</strong></h5>
+                                            <p>En SQL, une requête paramétrée est une requête préparée qui utilise des paramètres ou des variables pour spécifier les valeurs des critères de recherche ou des conditions dans la requête. Au lieu de spécifier directement les valeurs dans la requête, vous utilisez des paramètres qui sont remplacés par les valeurs réelles au moment de l'exécution de la requête.</p>
+                                            <p>Voici un exemple de requête paramétrée en SQL utilisant la syntaxe de paramètre spécifique à la base de données :</p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-8">
+                                                    <pre class="code-block"><code class="sql">SELECT * FROM table WHERE column = :param;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                            <p>Dans cet exemple, <strong><code>:param</code></strong> est le paramètre qui sera remplacé par une valeur réelle lors de l'exécution de la requête. La syntaxe exacte pour spécifier les paramètres peut varier selon la base de données et la bibliothèque SQL utilisée.</p>
+                                            <p>L'utilisation de requêtes paramétrées permet de réduire les risques d'injections SQL et d'améliorer les performances des requêtes en évitant la compilation répétée des requêtes.</p>
+                                            <br><hr><br>
+                                            <h5><strong>Schéma :</strong></h5>
+                                            <p>Un schéma est un ensemble logiques des données contenues de la BDD.</p>
+                                            <br><hr><br>
+                                            <h5><strong>Schéma relationnel :</strong></h5>
+                                            <p>Un schéma relationnel est une structure de données utilisée pour représenter des relations entre des entités dans une base de données relationnelle. Il est composé de tables, de colonnes et de clés qui définissent la manière dont les données sont organisées et stockées dans la base de données.</p>
+                                            <p>Dans un schéma relationnel, chaque table représente une entité ou un type d'objet différent, et chaque ligne de la table représente une occurrence ou une instance de cette entité. Les colonnes de la table représentent des attributs ou des propriétés de l'entité, et chaque colonne a un nom unique qui décrit le type de données stockées.</p>
+                                            <p>Les clés sont un élément important du schéma relationnel, car elles permettent de définir les relations entre les tables. Une clé primaire est une colonne ou un groupe de colonnes qui identifie de manière unique chaque ligne de la table. Une clé étrangère est une colonne dans une table qui fait référence à une clé primaire dans une autre table, établissant ainsi une relation entre les deux tables.</p>
+                                            <p>En utilisant un schéma relationnel, les données peuvent être stockées, organisées et récupérées de manière efficace et cohérente, ce qui facilite l'analyse et la manipulation des données. Les schémas relationnels sont couramment utilisés dans les systèmes de gestion de bases de données relationnelles tels que Microsoft SQL Server, Oracle, MySQL, etc.</p>
+                                            <br><hr><br>
+                                            <h5><strong>Vue :</strong></h5>
+                                            <p>Une vue est une requête enregistrée qu'il est possible de l'utiliser dans des autres requêtes.</p>
+                                            <p><em><strong>Exemple :</strong></em>
+                                            Supposons que nous avons une table <strong><code>Clients</code></strong> avec les colonnes <strong><code>Nom</code></strong>, <strong><code>Adresse</code></strong> et <strong><code>Ville</code></strong>. Nous pouvons créer une vue appelée <strong><code>VueClients</code></strong> qui ne renvoie que les noms et adresses des clients, en excluant la ville.</p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-8">
+                                                    <pre class="code-block"><code class="sql">CREATE VIEW VueClients AS
+SELECT Nom, Adresse FROM Clients;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                            <p>Maintenant, chaque fois que nous interrogeons la vue <strong><code>VueClients</code></strong>, nous ne verrons que les noms et adresses des clients, même si la table <strong><code>Clients</code></strong> contient également des informations sur la ville. Par exemple :</p>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-8">
+                                                    <pre class="code-block"><code class="sql">SELECT * FROM VueClients;</code><button class="btn btn-primary copy-button" data-bs-toggle="tooltip" title="Copy" onclick="copyToClipboard(this.parentNode.querySelector('code'))"><i class="bi bi-clipboard icon"></i></button></pre>
+                                                </div>
+                                            </div>
+                                            <p>Cette requête renverra une liste de tous les noms et adresses des clients stockés dans la table <strong><code>Clients</code></strong>. La ville ne sera pas incluse car elle n'a pas été incluse dans la vue.</p>
+                                            <p>Il est important de noter que les vues ne stockent pas réellement les données, elles fournissent simplement une vue virtuelle des données existantes. Les données affichées par une vue sont généralement mises à jour automatiquement lorsque les tables sous-jacentes sont modifiées.</p>
+                                            <br><hr><br>
+                                            <h4 id="association"><strong>Association :</strong></h4>
+                                            <p>En base de données, une association (ou relation) est une correspondance entre deux tables qui sont liées entre elles par une <strong>clé étrangère</strong>. Elle permet de décrire comment les données sont reliées entre elles.</p>
+                                            <p>Il existe plusieurs types d'associations, qui sont définies par la façon dont les enregistrements des tables sont liés :</p>
+                                            <ul>
+                                            <li><strong>Une association 1 à 1 (one-to-one) :</strong> chaque enregistrement d'une table est lié à un et un seul enregistrement d'une autre table.</li>
+                                            <li><strong>Une association 1 à plusieurs (one-to-many) :</strong> chaque enregistrement d'une table est lié à plusieurs enregistrements d'une autre table.</li>
+                                            <li><strong>Une association plusieurs à plusieurs (many-to-many) :</strong> chaque enregistrement d'une table peut être lié à plusieurs enregistrements d'une autre table, et vice versa.</li>
+                                            </ul>
+                                            <p>Pour définir une association en base de données, on utilise une clé étrangère qui est une colonne d'une table qui référence la clé primaire d'une autre table. Cette clé étrangère permet de faire le lien entre les deux tables et d'établir l'association.</p>
+                                            <p>Par exemple, si on a une table <strong><code>Client</code></strong> avec une clé primaire <strong><code>id_client</code></strong>, et une table <strong><code>Commande</code></strong> avec une clé primaire <strong><code>id_commande</code></strong> et une clé étrangère <strong><code>id_client</code></strong> qui référence la clé primaire de la table <strong><code>Client</code></strong>, on peut établir une association entre les deux tables. Cette association permet de lier les commandes aux clients correspondants.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between">
+                    <!-- Pages List on the Left -->
+                    <div class="col-12 col-md-4">
+                        <h5 class="text-primary fw-bolder">Pages</h5>
+                        <ul class="list-unstyled small m-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="resume.html">Curriculum vitæ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="BTS-SIO.html">BTS SIO</a></li>
+                            <li class="nav-item"><a class="nav-link" href="projects.html">Projets</a></li>   
+                            <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
+                            <li class="nav-item"><a class="nav-link" href="documents.html">Documentation</a></li>                 
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-center mb-3 mb-md-0">
+                        <!-- Social Network Links in the Middle -->
+                        <div class="d-flex justify-content-center fs-2 gap-4">
+                            <a class="text-gradient" href="https://www.linkedin.com/in/eli-roisman-34371a261"><i class="bi bi-linkedin"></i></a>
+                            <a class="text-gradient" href="https://discordapp.com/users/74297832861007982"><i class="bi bi-discord"></i></a>
+                            <a class="text-gradient" href="https://github.com/eroisman"><i class="bi bi-github"></i></a>
+                            <a class="text-gradient" href="mailto:eliroisman1818@gmail.com"><i class="bi bi-envelope-fill"></i></a>
+                        </div>
+                    </div>
+                    <!-- Privacy, Terms, Contact on the Right -->
+                    <div class="col-12 col-md-4">
+                        <ul class="list-unstyled small m-0 d-flex justify-content-end">
+                            <li class="me-3"><a class="text-decoration-none" href="#!">Privacy</a></li>
+                            <li class="me-3"><a class="text-decoration-none" href="#!">Terms</a></li>
+                            <li><a class="text-decoration-none" href="#!">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pb-5"></div>
+                <!-- Copyright -->
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <div class="small">Copyright &copy; Eli ROISMAN 2023</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+        <!-- tooltip JS script -->
+        <script>
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+              return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        </script>
+
+        <!-- Back to Top button -->
+        <a href="#top" id="back-to-top" class="btn bg-gradient-primary-to-secondary rounded-circle d-flex justify-content-center align-items-center">
+            <i class="bi bi-arrow-up-short"></i>
+        </a> 
+    </body>
+</html>
