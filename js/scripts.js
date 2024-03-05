@@ -56,64 +56,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-/*
-    // URL of the RSS feed
-    const rssFeedUrl = 'assets/RSS/rss(1).xml';
-
-    // Function to fetch and display the RSS feed content
-    async function fetchRssFeed() {
-        try {
-            const response = await fetch(rssFeedUrl);
-            const xmlText = await response.text();
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-            const items = xmlDoc.querySelectorAll('item');
-
-            const rssContainer = document.getElementById('rss-container');
-            
-            items.forEach(item => {
-                const title = item.querySelector('title').textContent;
-                const link = item.querySelector('link').textContent;
-                const description = item.querySelector('description').textContent;
-
-                const card = document.createElement('div');
-                card.className = 'col';
-                card.innerHTML = `
-                    <div class="card shadow-sm mb-3 h-100 d-flex">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                        <div class="card-body">
-                            <h5 class="card-title">${title}</h5>
-                            <p class="card-text">${description}</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                              <div class="btn-group">
-                                <a href="${link}><button type="button" class="btn btn-sm btn-outline-secondary">Read more</button></a>
-                              </div> 
-                              <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                `;
-
-                rssContainer.appendChild(card);
-            });
-        } catch (error) {
-            console.error('Error fetching RSS feed:', error);
-        }
-    }
-
-    // Call the fetchRssFeed function when the page loads
-    document.addEventListener('DOMContentLoaded', fetchRssFeed);
-
-*/
-  
-
-
 // Define the API endpoint URL with the API key
 var url = 'https://newsapi.org/v2/everything?' +
-'q=api&' + 
-'searchIn=title,content&' + 
+'q=rançongiciel&' + 
+'searchIn=title,content&' +
+'language=fr&' +
+'sortBy=publishedAt&' +
 'pageSize=60&' +
 'apiKey=847feb52394b4d4a8c1abbf764b33ef2';
+
+/*
+// Define the API endpoint URL with the API key (GNews.io)
+var url = 'https://gnews.io/api/v4/search?' +
+'q=rançongiciel&' + 
+'in=title,content&' +
+'lang=fr&' +
+'sortBy=publishedAt&' +
+'max=60&' +
+'apiKey=5fb7ac25da92876ef1a234673e7eca0a';
+*/
 
 // Make a fetch request to the API
 fetch(url)
@@ -151,7 +112,7 @@ fetch(url)
                       <div class="btn-group position-absolute bottom-0 left-0 mb-3 mt-3">
                           <a href="${article.url}"><button type="button" class="btn btn-sm btn-outline-secondary">Read more</button></a>
                       </div> 
-                      <small class="text-muted position-absolute bottom-0 end-0 mb-3 me-3">${article.author}</small>
+                      <small class="text-muted position-absolute bottom-0 end-0 mb-3 me-3">${article.source.name}</small>
                   </div>
               </div>
           </div>
