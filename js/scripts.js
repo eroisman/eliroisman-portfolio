@@ -100,12 +100,13 @@ fetch(url)
         articleCard.className = 'col';
         articleCard.innerHTML = `
           <div class="card shadow-sm mb-3 h-100 d-flex">
+              <img src="${article.image || 'https://via.placeholder.com/150'}" class="card-img-top" alt="Article Image" style="height: 200px; object-fit: cover;">
               <div class="card-body">
                   <h5 class="card-title">${article.title}</h5>
                   <p class="card-text">${formattedDate}</p>
                   <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group position-absolute bottom-0 left-0 mb-3 mt-3">
-                          <a href="${article.url}"><button type="button" class="btn btn-sm btn-outline-secondary">Read more</button></a>
+                          <a href="${article.url}"><button type="button" class="btn btn-sm btn-outline-secondary">Lire l'article</button></a>
                       </div> 
                       <small class="text-muted position-absolute bottom-0 end-0 mb-3 me-3">${article.source.name}</small>
                   </div>
