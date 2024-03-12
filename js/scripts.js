@@ -62,7 +62,7 @@ var url = 'https://newsapi.org/v2/everything?' +
 'searchIn=title,content&' +
 'language=fr&' +
 'sortBy=publishedAt&' +
-'pageSize=60&' +
+'pageSize=9&' +
 'apiKey=847feb52394b4d4a8c1abbf764b33ef2';
 */
 
@@ -128,4 +128,6 @@ fetch(url)
   });
 
 
+
+  
 

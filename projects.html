@@ -29,7 +29,26 @@
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                             <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
                             <li class="nav-item"><a class="nav-link" href="resume.html">Curriculum vitæ</a></li>
-                            <li class="nav-item"><a class="nav-link" href="projects.html">Projets</a></li>   
+                            <li class="nav-item dropdown btn-group">
+                                <a class="nav-link" href="projects.html">Projets</a>
+                                <a class="nav-link dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                                    <span class="sr-only"></span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="projects.html">Projets</a>
+                                    <div class="dropdown-divider"></div>
+                                    <h6 class="dropdown-header">Projets entreprise</h6>
+                                    <a class="dropdown-item" href="mobeex.html">MobeeX</a>
+                                    <a class="dropdown-item" href="ipm.html">Mission IPM</a>
+                                    <a class="dropdown-item" href="cnc.html">CNC et gestion du parc informatique</a>
+                                    <div class="dropdown-divider"></div>
+                                    <h6 class="dropdown-header">Projet école</h6>
+                                    <a class="dropdown-item" href="logeproj.html">Logeproj</a>
+                                    <div class="dropdown-divider"></div>
+                                    <h6 class="dropdown-header">Épreuve E4</h6>
+                                    <a class="dropdown-item" href="assets/Tableau_de_synthese_Epreuve_E4.pdf">Tableau de synthèse</a>
+                                </div>
+                            </li>                                                    
                             <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>              
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         </ul>
@@ -61,27 +80,48 @@
                     </section>
 
 
+                    <!-- In this page - offcanvas -->
+                    <div class="col-lg-4">
+                        <!-- In this page - offcanvas - Button-->
+                        <button class="btn bg-gradient-primary-to-secondary btn-table-of-contents text-light" 
+                                type="button" 
+                                data-bs-toggle="offcanvas" 
+                                data-bs-target="#offcanvasStart" 
+                                aria-controls="offcanvasStart">
+                                <a class="btn bg-gradient-primary-to-secondary btn-table-of-contents text-light" 
+                                    href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Dans cette page">
+                                    <i class="bi bi-list"></i>
+                                </a>
+                        </button>
+                        <!-- In this page - offcanvas - Navigation -->
+                        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasStart" aria-labelledby="offcanvasStartLabel">
+                            <div class="offcanvas-header text-secondary">
+                                <h5 id="offcanvasStartLabel">Dans cette page</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body mb-6">
+                                <nav class="nav flex-column">
+                                    <a class="nav-link" href="#entreprise">Projets entreprise</a>
+                                    <ul>
+                                        <li><a class="nav-link" href="#mobeex">MobeeX<a class="nav-link text-secondary" href="mobeex.html">(visualiser la page)</a></a></li>
+                                        <li><a class="nav-link" href="#ipm">Mission IPM (Incident & Problem Manager)<a class="nav-link text-secondary" href="ipm.html">(visualiser la page)</a></a></li>
+                                        <li><a class="nav-link" href="#cnc">CNC (Configurable Network Computing) et gestion du parc 
+                                            informatique<a class="nav-link text-secondary" href="cnc.html">(visualiser la page)</a></a></li>
+                                    </ul>
+                                    <a class="nav-link" href="#ecole">Projet école</a>
+                                    <ul>
+                                        <li><a class="nav-link" href="#logeproj">Logeproj<a class="nav-link text-secondary" href="logeproj.html">(visualiser la page)</a></a></li>
+                                    </ul>
+                                    <a class="nav-link" href="#tableau">Tableau de synthèse - Épreuve E4<a class="nav-link text-secondary" href="/assets/Tableau_de_synthese_Epreuve_E4.pdf">(visualiser le tableau)</a></a>
+                                </nav>
+                            </div>
+                        </div>   
+                    </div>
                     
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-12 col-xl-12 col-xxl-12">
                             
-                            <h2 class="text-primary fw-bolder mb-5">Projets entreprise :</h2>
-                            <!-- Project Card 1-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder"><a href="mobeex.html" style="text-decoration: none;">MobeeX</a></h2>
-                                            <p>MobbeX est une application Web destinée aux appareils mobiles et qui a pour rôle d'interagir entre le magasinier dans 
-                                                l'entrepôt et le système ERP de l'entreprise. L'application est développée en TypeScript avec le framework OracleJET.</p>
-                                        </div>
-                                        <div class="col-auto d-none d-lg-block">
-                                            <img class="img-fluid" src="assets/logo M4.png" alt="..." />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <h2 class="text-primary fw-bolder mb-5" id="entreprise">Projets entreprise :</h2>
                             <!-- Project Card 1-->
                             <div class="card shadow border-0 rounded-4 mb-5">
                                 <div class="card-body p-5">
@@ -92,8 +132,8 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-8">
-                                            <h2 class="fw-bolder"><a href="mobeex.html" style="text-decoration: none;">MobeeX</a></h2>
-                                            <p>MobbeX est une application Web destinée aux appareils mobiles et qui a pour rôle d'interagir entre le magasinier dans 
+                                            <h2 class="fw-bolder" id="mobeex"><a href="mobeex.html" style="text-decoration: none;">MobeeX</a></h2>
+                                            <p>MobeeX est une application Web destinée aux appareils mobiles et qui a pour rôle d'interagir entre le magasinier dans 
                                                 l'entrepôt et le système ERP de l'entreprise. L'application est développée en TypeScript avec le framework OracleJET.</p>
                                         </div>
                                     </div>
@@ -110,7 +150,7 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-8">
-                                            <h2 class="fw-bolder"><a href="ipm.html" style="text-decoration: none;">Mission IPM (Incident & Problem Manager)</a></h2>
+                                            <h2 class="fw-bolder" id="ipm"><a href="ipm.html" style="text-decoration: none;">Mission IPM (Incident & Problem Manager)</a></h2>
                                             <p>La gestion des incidents et des problèmes ("Incident and Problem Management", IPM) est un processus de gestion des tâches 
                                                 qui aide les organisations à faire face aux problèmes qui surviennent. Il comprend l'identification, l'évaluation et la 
                                                 hiérarchisation des incidents et des problèmes, ainsi que la planification, la mise en œuvre et l'examen des mesures correctives.</p>
@@ -129,7 +169,7 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-8">
-                                            <h2 class="fw-bolder"><a href="cnc.html" style="text-decoration: none;">CNC (Configurable Network Computing) et gestion du parc 
+                                            <h2 class="fw-bolder" id="cnc"><a href="cnc.html" style="text-decoration: none;">CNC (Configurable Network Computing) et gestion du parc 
                                                 informatique</a></h2>
                                             <p>La gestion des incidents et des problèmes ("Incident and Problem Management", IPM) est un processus de gestion des 
                                                 tâches qui aide les organisations à faire face aux problèmes qui surviennent. Il comprend l'identification, l'évaluation 
@@ -141,7 +181,7 @@
                             </div>
 
 
-                            <h2 class="text-secondary fw-bolder mb-5">Projet école :</h2>
+                            <h2 class="text-secondary fw-bolder mb-5" id="ecole">Projet école :</h2>
                             <!-- Project Card 4-->
                             <div class="card shadow border-0 rounded-4 mb-5">
                                 <div class="card-body p-5">
@@ -152,9 +192,20 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-8">
-                                            <h2 class="fw-bolder"><a href="logeproj.html" style="text-decoration: none;" class="text-secondary">Logeproj</a></h2>
+                                            <h2 class="fw-bolder" id="logeproj"><a href="logeproj.html" style="text-decoration: none;" class="text-secondary">Logeproj</a></h2>
                                             <p>Logeproj est une application de gestion du budget et des subventions destinée aux association. L'application est développée 
                                                 en C# au côté serveur et en Anguler côté client.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2 class="text-gradient d-inline fw-bolder mb-5" id="tableau">Tableau de synthèse E4 :</h2>
+                            <div class="card shadow border-0 rounded-4 mb-5 mt-5">
+                                <div class="card-body p-4">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <iframe class="rounded" src="assets/Tableau_de_synthese_Epreuve_E4.pdf" width="100%" height="750px"></iframe>
                                         </div>
                                     </div>
                                 </div>
