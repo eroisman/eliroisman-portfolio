@@ -64,7 +64,7 @@ document.getElementById('acceptButton').addEventListener('click', function() {
 
 
 
-/*
+
 // Define the API endpoint URL with the API key (NewsAPI.com - Pour localhost)
 var url = 'https://newsapi.org/v2/everything?' +
 'q=rançongiciel&' + 
@@ -73,12 +73,12 @@ var url = 'https://newsapi.org/v2/everything?' +
 'sortBy=publishedAt&' +
 'pageSize=9&' +
 'apiKey=847feb52394b4d4a8c1abbf764b33ef2';
-*/
 
+/*
 // Define the API endpoint URL with the API key (GNews.io)
 apikey = '5fb7ac25da92876ef1a234673e7eca0a';
 url = 'https://gnews.io/api/v4/search?q=rançongiciel&lang=fr&country=fr&max=9&apikey=' + apikey;
-
+*/
 
 // Make a fetch request to the API
 fetch(url)
