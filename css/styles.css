@@ -11877,3 +11877,12 @@ color:#cecece;
   font-size:18px;
   margin-bottom:2px;
 }
+
+
+.conditions-link {
+  color: var(--bs-nav-link-color);
+  text-decoration: none;
+}
+.conditions-link:hover, .conditions-link:focus {
+  color: blue;
+}

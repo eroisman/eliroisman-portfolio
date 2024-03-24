@@ -39,14 +39,14 @@
                 });
             }
         </script>
-          
+                
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body class="d-flex flex-column add-space-between-words">
         <main class="flex-shrink-0">
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
                 <div class="container px-5">
                     <a class="navbar-brand" href="index.html"><img src="assets/Logo/Logo Files/For Web/svg/Color logo - no background.svg" width="200" height="auto" alt="Logo"></a>
 
@@ -72,7 +72,7 @@
                                     <a class="dropdown-item" href="logeproj.html">Logeproj</a>
                                     <div class="dropdown-divider"></div>
                                     <h6 class="dropdown-header">Épreuve E4</h6>
-                                    <a class="dropdown-item" href="assets/Tableau_de_synthese_Epreuve_E4.pdf">Tableau de synthèse</a>
+                                    <a class="dropdown-item" target="_blank" href="assets/Tableau_de_synthese_Epreuve_E4.pdf">Tableau de synthèse</a>
                                 </div>
                             </li>         
                             <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>              
@@ -81,8 +81,8 @@
                     </div>
                 </div>
             </nav>
-            <!-- Page content-->
-            <div class="container px-12 my-5">
+            <!-- Page Content - breadcrumb -->
+            <div class="container px-5 my-5" style="padding-top: 100px;">
                 <div class="text-center mb-5">
                     <h1 class="display-4 fw-bolder mb-0"><span class="text-gradient d-inline">Contact</span></h1>
                     <div class="breadcrumb-container">
@@ -123,7 +123,7 @@
                                         <!-- Email address input-->
                                         <div class="form-floating mb-3">
                                             <input class="form-control" id="email" name="email" type="email" required />
-                                            <label for="email">Addresse e-mail</label>
+                                            <label for="email">Adresse e-mail</label>
                                             <div class="invalid-feedback" data-sb-feedback="email:required">Un e-mail est requis.</div>
                                             <div class="invalid-feedback" data-sb-feedback="email:email">L'e-mail n'est pas valide.</div>
                                         </div>
@@ -150,7 +150,34 @@
                                         <div class="col-12">
                                             <div class="form-check">
                                               <input class="form-check-input" id="check" type="checkbox" required>
-                                              <label for="check" class="form-check-label">Accepter les conditions d'utilisation</label>
+                                              <label for="check" class="form-check-label">Accepter les <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="conditions-link">conditions d'utilisation &#9432;</a></label>
+
+                                              <!-- Modal -->
+                                              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h1 class="modal-title fs-5" id="exampleModalLabel">Conditions d'utilisation</h1>
+                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                      <p>En utilisant ce formulaire de contact, vous consentez à ce que les informations que vous fournissez, telles que votre nom, prénom, adresse e-mail, 
+                                                        numéro de téléphone et message, soient collectées et conservées par le propriétaire de ce site Web. Ces 
+                                                        informations seront utilisées dans le but de répondre à votre demande et de vous fournir un service approprié.</p>
+                                                      <p>Vous consentez également à ce que ces informations soient conservées indéfiniment, sauf indication contraire de votre part. Cependant, nous nous 
+                                                        engageons à protéger vos données et à ne pas les partager avec des tiers sans votre consentement.</p>
+                                                      <p>En utilisant ce formulaire, vous acceptez ces conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser ce formulaire 
+                                                        de contact.</p>
+                                                      <p>Merci de votre compréhension et de votre confiance.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                      <button type="button" class="btn btn-primary" id="acceptButton">Accepter</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              
                                               <div class="invalid-feedback" data-sb-feedback="check:required">Vous devez accepter les conditions avant de soumettre votre demande.</div>
                                             </div>
                                         </div>
@@ -180,10 +207,10 @@
                     <div class="col-md-4 mb-3 mb-md-0">
                         <!-- Social Network Links -->
                         <div class="d-flex justify-content-center fs-2 gap-4 mb-3">
-                            <a class="text-gradient" href="https://www.linkedin.com/in/eli-roisman-34371a261"><i class="bi bi-linkedin"></i></a>
-                            <a class="text-gradient" href="https://discordapp.com/users/74297832861007982"><i class="bi bi-discord"></i></a>
-                            <a class="text-gradient" href="https://github.com/eroisman"><i class="bi bi-github"></i></a>
-                            <a class="text-gradient" href="mailto:eliroisman1818@gmail.com"><i class="bi bi-envelope-fill"></i></a>
+                            <a class="text-gradient" target="_blank" href="https://www.linkedin.com/in/eli-roisman-34371a261"><i class="bi bi-linkedin"></i></a>
+                            <a class="text-gradient" target="_blank" href="https://discordapp.com/users/74297832861007982"><i class="bi bi-discord"></i></a>
+                            <a class="text-gradient" target="_blank" href="https://github.com/eroisman"><i class="bi bi-github"></i></a>
+                            <a class="text-gradient" target="_blank" href="mailto:eliroisman1818@gmail.com"><i class="bi bi-envelope-fill"></i></a>
                         </div>
                         <!-- Copyright Text -->
                         <div class="text-center">

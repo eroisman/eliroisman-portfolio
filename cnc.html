@@ -31,7 +31,7 @@
     <body class="d-flex flex-column h-100 bg-light add-space-between-words">
         <main class="flex-shrink-0">
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
                 <div class="container px-5">
                     <a class="navbar-brand" href="index.html"><img src="assets/Logo/Logo Files/For Web/svg/Color logo - no background.svg" width="200" height="auto" alt="Logo"></a>
 
@@ -57,7 +57,7 @@
                                     <a class="dropdown-item" href="logeproj.html">Logeproj</a>
                                     <div class="dropdown-divider"></div>
                                     <h6 class="dropdown-header">Épreuve E4</h6>
-                                    <a class="dropdown-item" href="assets/Tableau_de_synthese_Epreuve_E4.pdf">Tableau de synthèse</a>
+                                    <a class="dropdown-item" target="_blank" href="assets/Tableau_de_synthese_Epreuve_E4.pdf">Tableau de synthèse</a>
                                 </div>
                             </li>         
                             <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>              
@@ -67,7 +67,7 @@
                 </div>
             </nav>
             <!-- Page Content - breadcrumb -->
-            <div class="container px-5 my-5">
+            <div class="container px-5 my-5" style="padding-top: 100px;">
                 <div class="text-center mb-5">
                     <h1 class="display-4 fw-bolder mb-0"><span class="text-gradient d-inline">CNC (Configurable Network Computing) et gestion du parc informatique</span></h1>
                     <div class="breadcrumb-container">
@@ -83,9 +83,10 @@
 
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-auto col-xl-auto col-xxl-auto">
-                        <h5 class="text-center mb-5">La gestion des incidents et des problèmes ("Incident and Problem Management", IPM) est un processus de 
-                            gestion des tâches qui aide les organisations à faire face aux problèmes qui surviennent. Il comprend l'identification, l'évaluation et la 
-                            hiérarchisation des incidents et des problèmes, ainsi que la planification, la mise en œuvre et l'examen des mesures correctives.</h5>
+                        <h5 class="text-center mb-5">Dans JD Edwards EnterpriseOne, le Configurable Network Computing (CNC) est une architecture qui permet 
+                            de gérer et de configurer les environnements informatiques de l'entreprise, notamment les serveurs, les bases de données et les 
+                            applications, de manière centralisée et flexible. Cela permet aux administrateurs de contrôler efficacement les configurations 
+                            et les déploiements tout en assurant une gestion optimale des ressources et une intégrité des données.</h5>
                         <hr>
                         <!-- In this page - offcanvas -->
                         <div class="col-lg-4">
@@ -108,11 +109,19 @@
                                 </div>
                                 <div class="offcanvas-body mb-6">
                                     <nav class="nav flex-column">
-                                        <a class="nav-link" href="#description">Description générale</a>
-                                        <a class="nav-link" href="#responsabilites">Responsabilités principales</a>
-                                        <a class="nav-link" href="#organisation">Horaires et Organisation :</a>
-                                        <a class="nav-link" href="#outils">Outils de travail</a>
-                                        <a class="nav-link" href="#resultats">Résultats et Impact</a>
+                                        <a class="nav-link text-primary" href="#consultant_cnc">Consultant technique CNC</a>
+                                        <ul>
+                                            <li><a class="nav-link text-primary" href="#responsabilites1">Responsabilités principales</a></li>
+                                            <li><a class="nav-link text-primary" href="#outils1">Outils de travail</a></li>
+                                            <li><a class="nav-link text-primary" href="#resultats1">Résultats et Impact</a></li>
+                                        </ul>
+                                        <a class="nav-link text-secondary" href="#gestion">Gestion du parc informatique</a>
+                                        <ul>
+                                            <li><a class="nav-link text-secondary" href="#responsabilites2">Responsabilités principales</a></li>
+                                            <li><a class="nav-link text-secondary" href="#outils2">Outils de travail</a></li>
+                                            <li><a class="nav-link text-secondary" href="#resultats2">Résultats et Impact</a></li>
+                                        </ul>
+                                        <a class="nav-link" href="#competences">Compétences acquis</a>
                                     </nav>
                                 </div>
                             </div>   
@@ -120,47 +129,29 @@
 
                         <!-- Section-->
                         <section class="bg-light py-5">
-                            <h3 class="py-4" id="description"><strong>Description générale :</strong></h3>
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <p>Au cours de ma mission au sein de l'unité JDE d'Inetum, j'ai occupé le rôle d'IPM au sein de la TMA (Tierce maintenance applicative) 
-                                            mutualisée, assurant la gestion des incidents et des problèmes pour cinq clients principaux. Mon engagement s'est concentré sur la 
-                                            coordination efficace entre les utilisateurs, les consultants fonctionnels et techniques, ainsi que la mise en œuvre de 
-                                            procédures rapides et précises.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-
-                            <h3 class="py-4" id="responsabilites"><strong>Responsabilités principales :</strong></h3>
+                            <h2 class="text-primary fw-bolder mb-5" id="consultant_cnc">Consultant technique CNC</h2>
+                            
+                            <h3 class="py-4" id="responsabilites1"><strong>Responsabilités principales :</strong></h3>
                             <div class="card shadow border-0 rounded-4 mb-5">
                                 <div class="card-body p-5">
                                     <div class="row align-items-center gx-5">
                                         <div class="col-lg-12">
                                             <ol>
-                                                <li><b>Réception et Classification des Tickets :</b>
+                                                <li><b>Analyse et Suivi des Tickets :</b>
                                                     <ul>
-                                                        <li>Traitement des tickets problèmes et incidents provenant des clients.</li>
-                                                        <li>Classification en fonction de leur priorité et acheminement vers les services appropriés.</li>
+                                                        <li>Recevoir et examiner les tickets clients liés aux déploiments dans les différants environnements de JDE (JD Edwards).</li>
                                                     </ul>
                                                 </li>
-                                                <li><b>Communication Continue :</b>
+                                                <li><b>Déploiement de Packages :</b>
                                                     <ul>
-                                                        <li>Contact permanent avec les utilisateurs pour assurer une compréhension approfondie des problèmes.</li>
-                                                        <li>Coordination et suivi des tickets avec les consultants fonctionnels et techniques.</li>
+                                                        <li>Gérer le déploiement de packages dans les différents environnements de JD Edwards EnterpriseOne.</li>
+                                                        <li>Assurer la mise en œuvre efficace des packages tout en minimisant les risques de perturbation du système.</li>
                                                     </ul>
                                                 </li>
-                                                <li><b>Réunions Flash Quotidiennes :</b>
+                                                <li><b>Coordination et Communication :</b>
                                                     <ul>
-                                                        <li>Organisation quotidienne d'une réunion flash à 14h00 pour les retours des consultants intervenant dans la TMA.</li>
-                                                        <li>Informations sur les nouvelles procédures et les points cruciaux des clients.</li>
-                                                    </ul>
-                                                </li>
-                                                <li><b>Réunions avec les Clients :</b>
-                                                    <ul>
-                                                        <li>Rencontres journalières avec les Service Delivery Managers de tous les clients.</li>
-                                                        <li>Réunions hebdomadaires avec les responsables des domaines clients et les responsables côté Inetum.</li>
+                                                        <li>Collaborer avec les consultants fonctionnels et techniques pour assurer un déploiement efficace.</li>
+                                                        <li>Maintenir une communication continue avec les utilisateurs pour comprendre et résoudre les problèmes.</li>
                                                     </ul>
                                                 </li>
                                             </ol>
@@ -168,35 +159,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <hr>
 
-                            <h3 class="py-4" id="organisation"><strong>Horaires et Organisation :</strong></h3>
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col-lg-12">
-                                            <p class="fw-bolder">Deux IPM par jour :</p>
-                                            <ul>    
-                                                <li>IPM du matin : 07h00 à 15h00.</li>
-                                                <li>IPM du soir : 14h00 à 22h00.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-
-                            <h3 class="py-4" id="outils"><strong>Outils de travail :</strong></h3>
+                            <h3 class="py-4" id="outils1"><strong>Outils de travail :</strong></h3>
                             <div class="card shadow border-0 rounded-4 mb-5">
                                 <div class="card-body p-5">
                                     <div class="row align-items-center gx-5">
                                         <div class="col-lg-12">
                                             <ul>    
-                                                <li><b>Ticketing :</b> Utilisation de l'outil 'Hurra' pour la gestion des tickets.
+                                                <li><b>Ticketing :</b> Utilisation de l'outil 'Hurra' pour la gestion des tickets déploiments
                                                     <br>
                                                     <img class="img-fluid" src="assets/IPM/hurra.PNG" alt="..." />
-                                                    <br>Exemple d'un ticket :<br>
-                                                    <img class="img-fluid" src="assets/IPM/ticket_hurra.PNG" alt="..." />
+                                                </li>
+                                                <li><b>Outils de déploiement :</b> L’Object Management Workbench (OMW) de JDE
+                                                    <br>
+                                                    <img class="img-fluid" src="assets/CNC/OMW_JDE.jpg" alt="..." />
                                                 </li>
                                                 <li><b>Communication :</b> Teams et Outlook pour assurer une communication efficace.</li>
                                             </ul>
@@ -204,19 +180,150 @@
                                     </div>
                                 </div>
                             </div>
-                            <hr>
 
-                            <h3 class="py-4" id="resultats"><strong>Résultats et Impact :</strong></h3>
+                            <h3 class="py-4" id="resultats1"><strong>Résultats et Impact :</strong></h3>
                             <div class="card shadow border-0 rounded-4 mb-5">
                                 <div class="card-body p-5">
                                     <div class="row align-items-center gx-5">
                                         <div class="col-lg-12">
-                                            <p>Grâce à cette mission, j'ai contribué à une résolution plus rapide et efficace des incidents et des problèmes, en 
-                                                assurant une communication transparente entre toutes les parties prenantes. Les réunions régulières et 
-                                                l'utilisation d'outils appropriés ont favorisé une gestion proactive et une amélioration continue des processus.
+                                            <p>En remplissant ces responsabilités, j'ai contribué à une gestion plus efficace des déploiements dans les environnements JD Edwards de différants 
+                                                clients. La coordination étroite avec les équipes concernées et la communication transparente ont permis de minimiser les temps d'arrêt. 
                                                 <br><br>
-                                                Cette expérience m'a permis de développer des compétences essentielles en gestion des incidents, communication 
-                                                interne et externe, et coordination d'équipes multidisciplinaires.</p>
+                                                Cette expérience m'a permis de développer des compétences essentielles en gestion des déploiements des logiciels et 
+                                                communication interfonctionnelle.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                            <hr>
+
+                            <h2 class="text-secondary fw-bolder mt-5 mb-5" id="gestion">Gestion du parc informatique</h2>
+                            
+                            <h3 class="py-4" id="responsabilites2"><strong>Responsabilités principales :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <ol>
+                                                <li><b>Interface avec les Collaborateurs et la DSI :</b>
+                                                    <ul>
+                                                        <li>Servir de point de contact principal entre les collaborateurs et la Direction des Systèmes d'Information (DSI).</li>
+                                                        <li>Assurer une communication fluide et transparente pour répondre aux besoins et aux demandes des utilisateurs.</li>
+                                                    </ul>   
+                                                </li>
+                                                <li><b>Gestion des Tickets et des Incidents :</b>
+                                                    <ul>
+                                                        <li>Créer, suivre et gérer les tickets relatifs aux demandes et aux incidents des utilisateurs.</li>
+                                                        <li>Veiller à ce que les demandes et les incidents soient traités de manière efficace et dans les délais impartis.</li>
+                                                    </ul>
+                                                </li>
+                                                <li><b>Gestion du Parc Informatique :</b>
+                                                    <ul>
+                                                        <li>Superviser et gérer le parc informatique de l'agence, y compris les ordinateurs et les logiciels.</li>
+                                                        <li>Assurer la maintenance, la mise à jour et la sécurité des équipements informatiques.</li>
+                                                    </ul>
+                                                </li>
+                                                <li><b>Préparations Matérielles pour les Nouveaux Collaborateurs :</b>
+                                                    <ul>
+                                                        <li>Coordonner et mettre en place les préparatifs matériels nécessaires pour les nouveaux collaborateurs.</li>
+                                                        <li>S'assurer que les nouveaux employés disposent de tout le matériel informatique et des logiciels nécessaires pour commencer leur travail de manière efficace.</li>
+                                                    </ul>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="py-4" id="outils2"><strong>Outils de travail :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <ul>    
+                                                <li><b>Ticketing :</b> Utilisation de l'outil 'Global Help Desk' pour la gestion des tickets
+                                                    <br>
+                                                    <img class="img-fluid" src="assets/CNC/Global_Help_Desk_Inetum.PNG" alt="..." />
+                                                </li>
+                                                <li><b>Planification :</b> Utilisation de l'outil 'Planner' pour planifier et gérér les tâches
+                                                    <br>
+                                                    <img class="img-fluid" src="assets/CNC/Planner_Infra.PNG" alt="..." />
+                                                </li>
+                                                <li><b>Communication :</b> Teams et Outlook pour assurer une communication efficace.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="py-4" id="resultats2"><strong>Résultats et Impact :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <p>En remplissant ces responsabilités, j'ai contribué à une meilleure gestion des demandes des utilisateurs, à une augmentation de la productivité grâce à des équipements 
+                                                informatiques fiables et à une intégration fluide des nouveaux collaborateurs dans l'agence. Ma capacité à assurer une communication efficace entre les différentes 
+                                                parties prenantes a favorisé une résolution rapide des problèmes et une satisfaction accrue des utilisateurs. 
+                                                <br><br>
+                                                Cette expérience m'a permis de développer des compétences 
+                                                en gestion des services informatiques, en gestion des actifs et en communication interfonctionnelle.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <h3 class="py-4" id="competences"><strong>Compétences acquis :</strong></h3>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-12">
+                                            <ul>
+                                                <li><strong>Capacité à rendre compte d’un travail réalisé au sein d’une équipe projet en mettant clairement en évidence sa
+                                                    contribution personnelle.</strong></li>
+                                                <li><strong>Gérer le patrimoine informatique :</strong>
+                                                    <ul>
+                                                        <li>Recenser et identifier les ressources numériques</li>
+                                                        <li>Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</li>
+                                                        <li>Mettre en place et vérifier les niveaux d’habilitation associés à un service</li>
+                                                        <li>Vérifier les conditions de la continuité d’un service informatique</li>
+                                                        <li>Gérer des sauvegardes</li>
+                                                        <li>Vérifier le respect des règles d’utilisation des ressources numériques</li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong>Répondre aux incidents et aux demandes d’assistance et d’évolution :</strong>
+                                                    <ul>
+                                                        <li>Collecter, suivre et orienter des demandes</li>
+                                                        <li>Traiter des demandes concernant les services réseau et système, applicatifs</li>
+                                                        <li>Traiter des demandes concernant les applications</li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong>Développer la présence en ligne de l’organisation :</strong>
+                                                    <ul>
+                                                        <li>Participer à la valorisation de l’image de l’organisation sur les
+                                                            médias numériques en tenant compte du cadre juridique et des
+                                                            enjeux économiques</li>
+                                                        <li>Référencer les services en ligne de l’organisation et mesurer
+                                                            leur visibilité</li>
+                                                        <li>Participer à l’évolution d’un site Web exploitant les données de
+                                                            l’organisation</li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong>Travailler en mode projet :</strong>
+                                                    <ul>
+                                                        <li>Analyser les objectifs et les modalités d’organisation d’un projet</li>
+                                                        <li>Planifier les activités</li>
+                                                        <li>Évaluer les indicateurs de suivi d’un projet et analyser les écarts</li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong>Mettre à disposition des utilisateurs un service informatique :</strong>
+                                                    <ul>
+                                                        <li>Réaliser les tests d’intégration et d’acceptation d’un service</li>
+                                                        <li>Déployer un service</li>
+                                                        <li>Accompagner les utilisateurs dans la mise en place d’un service</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -233,10 +340,10 @@
                     <div class="col-md-4 mb-3 mb-md-0">
                         <!-- Social Network Links -->
                         <div class="d-flex justify-content-center fs-2 gap-4 mb-3">
-                            <a class="text-gradient" href="https://www.linkedin.com/in/eli-roisman-34371a261"><i class="bi bi-linkedin"></i></a>
-                            <a class="text-gradient" href="https://discordapp.com/users/74297832861007982"><i class="bi bi-discord"></i></a>
-                            <a class="text-gradient" href="https://github.com/eroisman"><i class="bi bi-github"></i></a>
-                            <a class="text-gradient" href="mailto:eliroisman1818@gmail.com"><i class="bi bi-envelope-fill"></i></a>
+                            <a class="text-gradient" target="_blank" href="https://www.linkedin.com/in/eli-roisman-34371a261"><i class="bi bi-linkedin"></i></a>
+                            <a class="text-gradient" target="_blank" href="https://discordapp.com/users/74297832861007982"><i class="bi bi-discord"></i></a>
+                            <a class="text-gradient" target="_blank" href="https://github.com/eroisman"><i class="bi bi-github"></i></a>
+                            <a class="text-gradient" target="_blank" href="mailto:eliroisman1818@gmail.com"><i class="bi bi-envelope-fill"></i></a>
                         </div>
                         <!-- Copyright Text -->
                         <div class="text-center">

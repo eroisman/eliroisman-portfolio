@@ -54,6 +54,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 });
 
+// Contact 'Condition d'utilisation' modal
+document.getElementById('acceptButton').addEventListener('click', function() {
+  document.getElementById('check').checked = true;
+  var modal = document.getElementById('exampleModal');
+  var modalInstance = bootstrap.Modal.getInstance(modal);
+  modalInstance.hide(); // This line closes the modal
+});
+
+
 
 /*
 // Define the API endpoint URL with the API key (NewsAPI.com - Pour localhost)
@@ -106,7 +115,7 @@ fetch(url)
                   <p class="card-text">${formattedDate}</p>
                   <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group position-absolute bottom-0 left-0 mb-3 mt-3">
-                          <a href="${article.url}"><button type="button" class="btn btn-sm btn-outline-secondary">Lire l'article</button></a>
+                          <a target="_blank" href="${article.url}"><button type="button" class="btn btn-sm btn-outline-secondary">Lire l'article</button></a>
                       </div> 
                       <small class="text-muted position-absolute bottom-0 end-0 mb-3 me-3">${article.source.name}</small>
                   </div>
