@@ -20,42 +20,12 @@
       })
 })()
 
-
-
-
-// Copy button for code blocks
-function copyToClipboard(element) {
-    var textToCopy = element.innerText;
-
-    // Create a temporary textarea element to hold the text
-    var textarea = document.createElement('textarea');
-    textarea.value = textToCopy;
-    document.body.appendChild(textarea);
-
-    // Select and copy the text
-    textarea.select();
-    document.execCommand('copy');
-
-    // Remove the textarea element
-    document.body.removeChild(textarea);
-
-    // Change the button icon temporarily to indicate success
-    var copyButton = element.parentNode.querySelector('.copy-button');
-    copyButton.innerHTML = '<i class="bi bi-clipboard-check icon"></i>';
-    setTimeout(function() {
-        copyButton.innerHTML = '<i class="bi bi-clipboard icon"></i>';
-    }, 5000); // Reset the button icon after 2 seconds
-}
-
 // highlights JS activation
 document.addEventListener('DOMContentLoaded', (event) => {
   document.querySelectorAll('code').forEach((block) => {
       hljs.highlightBlock(block);
   });
 });
-
-
-
 
 
 /*
@@ -70,8 +40,8 @@ var url = 'https://newsapi.org/v2/everything?' +
 */
 
 // Define the API endpoint URL with the API key (GNews.io)
-var apikey = '5fb7ac25da92876ef1a234673e7eca0a';
-var url = 'https://gnews.io/api/v4/search?q=rançongiciel&lang=fr&country=fr&max=9&apikey=' + apikey;
+apikey = '5fb7ac25da92876ef1a234673e7eca0a';
+url = 'https://gnews.io/api/v4/search?q=rançongiciel&lang=fr&country=fr&max=9&apikey=' + apikey;
 
 
 // Make a fetch request to the API
@@ -131,7 +101,6 @@ fetch(url)
   });
 
 
-
   
 // Contact 'Condition d'utilisation' modal
 document.getElementById('acceptButton').addEventListener('click', function() {
@@ -140,3 +109,11 @@ document.getElementById('acceptButton').addEventListener('click', function() {
   var modalInstance = bootstrap.Modal.getInstance(modal);
   modalInstance.hide(); // This line closes the modal
 });
+
+function closeOffcanvas() {
+  var offcanvas = document.getElementById('offcanvasStart');
+  var offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvas);
+  if (offcanvasInstance) {
+      offcanvasInstance.hide();
+  }
+}
