@@ -1,0 +1,77 @@
+# Angular
+/dist
+/bazel-out
+/node_modules
+*.log
+npm-debug.log*
+yarn-error.log*
+.ng
+.angular/cache/**
+.angular/cache
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.vscode/
+.history/*
+
+# IDE - Other
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Testing
+/coverage
+
+# Production
+/dist
+
+# Development
+/build
+.sass-cache/
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Build artifacts
+*.bundle.js
+*.bundle.js.map
+
+# Misc
+/.angular
+.angular/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Deploy
+.firebase/
+.firebaserc
+firebase-debug.log
+
+# Prettier
+.prettierignore

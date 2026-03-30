@@ -1,0 +1,39 @@
+<section class="py-5 bg-light">
+	<div class="container px-5 mb-5" style="padding-top: 100px;">
+		@if (loading) {
+			<div class="text-center py-5">
+				<h2 class="fw-bolder">Chargement du projet...</h2>
+			</div>
+		} @else if (hasError) {
+			<div class="text-center py-5">
+				<h2 class="fw-bolder">Erreur de chargement</h2>
+				<a [routerLink]="['/projects']" class="btn btn-primary mt-3">Voir tous les projets</a>
+			</div>
+		} @else if (project) {
+			<div class="text-center mb-5">
+				<h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">{{ project.title }}</span></h1>
+				<p class="text-muted mt-3">{{ project.category }}</p>
+			</div>
+
+			<div class="card shadow border-0 rounded-4 mb-5">
+				<div class="card-body p-5">
+					<div class="row align-items-center gx-5">
+						<div class="col-lg-4 mb-4 mb-lg-0">
+							<img class="img-fluid rounded" [src]="project.image" [alt]="project.title">
+						</div>
+						<div class="col-lg-8">
+							<p class="lead">{{ project.summary }}</p>
+							<p>{{ project.details }}</p>
+							<a [routerLink]="['/projects']" class="btn btn-outline-dark mt-3">Retour aux projets</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		} @else {
+			<div class="text-center py-5">
+				<h2 class="fw-bolder">Projet introuvable</h2>
+				<a [routerLink]="['/projects']" class="btn btn-primary mt-3">Voir tous les projets</a>
+			</div>
+		}
+	</div>
+</section>
