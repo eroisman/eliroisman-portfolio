@@ -25,6 +25,8 @@ export class Home implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.scrollToTop();
+
     forkJoin({
       content: this.siteContentService.getHomeContent(),
       projects: this.projectsService.getFeaturedProjects(3)
@@ -32,7 +34,14 @@ export class Home implements OnInit {
       this.content = content;
       this.featuredProjects = projects;
       this.loading = false;
+      this.scrollToTop();
       this.cdr.detectChanges();
+    });
+  }
+
+  private scrollToTop(): void {
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: 'auto' });
     });
   }
 }

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ProjectsService } from '../../services/projects.service';
 import { Project } from '../../types/project';
@@ -11,6 +11,7 @@ import { Project } from '../../types/project';
 })
 export class Navbar {
   protected projects: Project[] = [];
+  protected dropdownOpen = false;
 
   private readonly cdr = inject(ChangeDetectorRef);
 
@@ -27,5 +28,35 @@ export class Navbar {
 
   protected get schoolProjects(): Project[] {
     return this.projects.filter((project) => project.category === 'Projet école');
+  }
+
+  protected toggleProjectsDropdown(event: MouseEvent): void {
+    event.preventDefault();
+    this.dropdownOpen = !this.dropdownOpen;
+    this.cdr.detectChanges();
+  }
+
+  protected closeProjectsDropdown(): void {
+    if (!this.dropdownOpen) {
+      return;
+    }
+
+    this.dropdownOpen = false;
+    this.cdr.detectChanges();
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement | null;
+    if (target?.closest('.dropdown')) {
+      return;
+    }
+
+    this.closeProjectsDropdown();
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscapeKey(): void {
+    this.closeProjectsDropdown();
   }
 }

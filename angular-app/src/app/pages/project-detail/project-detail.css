@@ -1,0 +1,21 @@
+/* Tighter paragraph spacing for project detail content */
+.card-body p {
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.project-section img {
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.project-section .caption {
+  font-size: 0.9rem;
+  color: var(--bs-gray-600);
+  margin-top: 0.5rem;
+}
+
+/* reduce vertical gap between stacked blocks */
+.card-body > * + * {
+  margin-top: 0.75rem;
+}

@@ -16,50 +16,44 @@
     "sections": [
       {
         "title": "Description générale",
-        "paragraphs": [
-          "MobeeX est une solution de mobilité destinée aux utilisateurs terrain d'Inetum Business Solutions.",
-          "Le projet connecte une interface mobile à JD Edwards afin de rendre les dialogues métier plus rapides et plus fiables."
+        "blocks": [
+          { "type": "paragraph", "text": "MobeeX est une solution de mobilité destinée aux utilisateurs terrain d'Inetum Business Solutions." },
+          { "type": "paragraph", "text": "Le projet connecte une interface mobile à JD Edwards afin de rendre les dialogues métier plus rapides et plus fiables." }
         ]
       },
       {
         "title": "Présentation visuelle",
-        "paragraphs": [
-          "L'application est pensée pour les terminaux mobiles de type Zebra et les usages en entrepôt.",
-          "L'interface met en avant les écrans essentiels pour l'authentification, la navigation et les opérations courantes."
-        ],
-        "images": [
-          "assets/MobeeX/ZEBRA-1.jpg",
-          "assets/MobeeX/login_en.PNG",
-          "assets/MobeeX/ecran_wellcome_en.PNG",
-          "assets/MobeeX/menu_en.PNG",
-          "assets/MobeeX/menu_inventory_management_en.PNG",
-          "assets/MobeeX/menu_production_en.PNG"
+        "blocks": [
+          { "type": "paragraph", "text": "L'application est pensée pour les terminaux mobiles de type Zebra et les usages en entrepôt." },
+          { "type": "paragraph", "text": "L'interface met en avant les écrans essentiels pour l'authentification, la navigation et les opérations courantes." },
+          { "type": "image", "src": "assets/MobeeX/ZEBRA-1.jpg", "caption": "Terminal Zebra utilisé pour les tests" },
+          { "type": "image", "src": "assets/MobeeX/login_en.PNG", "caption": "Écran d'authentification" },
+          { "type": "image", "src": "assets/MobeeX/ecran_wellcome_en.PNG", "caption": "Écran d'accueil" },
+          { "type": "image", "src": "assets/MobeeX/menu_en.PNG", "caption": "Menu principal" },
+          { "type": "image", "src": "assets/MobeeX/menu_inventory_management_en.PNG", "caption": "Menu gestion d'inventaire" },
+          { "type": "image", "src": "assets/MobeeX/menu_production_en.PNG", "caption": "Menu production" }
         ]
       },
       {
         "title": "Mes contributions",
-        "paragraphs": [
-          "J'ai participé à l'intégration des dialogues métier liés à la gestion de stock et aux flux opérationnels.",
-          "Le projet inclut aussi des interactions JDE dédiées à la sortie sur OF et à la récupération des données."
-        ],
-        "images": [
-          "assets/MobeeX/ecran_jde_P31113_XMOB001.PNG",
-          "assets/MobeeX/orchestration_jde.PNG",
-          "assets/MobeeX/menu_en_2.PNG",
-          "assets/MobeeX/material_issue_en.PNG",
-          "assets/MobeeX/material_issue_search.PNG",
-          "assets/MobeeX/quantity_issued.PNG",
-          "assets/MobeeX/quantity_issued_jde.PNG",
-          "assets/MobeeX/jde_error_en.PNG",
-          "assets/MobeeX/search_error_en.PNG"
+        "blocks": [
+          { "type": "paragraph", "text": "J'ai participé à l'intégration des dialogues métier liés à la gestion de stock et aux flux opérationnels." },
+          { "type": "paragraph", "text": "Le projet inclut aussi des interactions JDE dédiées à la sortie sur OF et à la récupération des données." },
+          { "type": "image", "src": "assets/MobeeX/ecran_jde_P31113_XMOB001.PNG", "caption": "Écran JDE lié à l'opération" },
+          { "type": "image", "src": "assets/MobeeX/orchestration_jde.PNG", "caption": "Orchestration des appels JDE" },
+          { "type": "image", "src": "assets/MobeeX/menu_en_2.PNG", "caption": "Menu secondaire" },
+          { "type": "image", "src": "assets/MobeeX/material_issue_en.PNG", "caption": "Dialogue Material Issue" },
+          { "type": "image", "src": "assets/MobeeX/material_issue_search.PNG", "caption": "Recherche Material Issue" },
+          { "type": "image", "src": "assets/MobeeX/quantity_issued.PNG", "caption": "Quantités émises" },
+          { "type": "image", "src": "assets/MobeeX/quantity_issued_jde.PNG", "caption": "Quantités côté JDE" },
+          { "type": "image", "src": "assets/MobeeX/jde_error_en.PNG", "caption": "Erreur JDE capturée" },
+          { "type": "image", "src": "assets/MobeeX/search_error_en.PNG", "caption": "Erreur de recherche" }
         ]
       },
       {
         "title": "Compétences acquises",
-        "bullets": [
-          "Conception d'une interface mobile métier.",
-          "Intégration avec un ERP industriel.",
-          "Gestion de parcours utilisateur sur terminaux dédiés."
+        "blocks": [
+          { "type": "bullets", "items": ["Conception d'une interface mobile métier.", "Intégration avec un ERP industriel.", "Gestion de parcours utilisateur sur terminaux dédiés."] }
         ]
       }
     ],
@@ -89,34 +83,30 @@
     "sections": [
       {
         "title": "Description générale",
-        "paragraphs": [
-          "IPM structure un processus de gestion des incidents et des problèmes pour mieux cadrer le support SI.",
-          "Le but est de rendre les actions de suivi plus lisibles et de mieux répartir les responsabilités."
+        "blocks": [
+          { "type": "paragraph", "text": "IPM structure un processus de gestion des incidents et des problèmes pour mieux cadrer le support SI." },
+          { "type": "paragraph", "text": "Le but est de rendre les actions de suivi plus lisibles et de mieux répartir les responsabilités." }
         ]
       },
       {
         "title": "Outils de travail",
-        "paragraphs": [
-          "Les visuels ci-dessous illustrent l'environnement de suivi et les tickets utilisés pendant la mission."
-        ],
-        "images": [
-          "assets/IPM/hurra.PNG",
-          "assets/IPM/ticket_hurra.PNG"
+        "blocks": [
+          { "type": "paragraph", "text": "Les visuels ci-dessous illustrent l'environnement de suivi et les tickets utilisés pendant la mission." },
+          { "type": "image", "src": "assets/IPM/hurra.PNG", "caption": "Outil de ticketing utilisé" },
+          { "type": "image", "src": "assets/IPM/ticket_hurra.PNG", "caption": "Exemple de ticket" }
         ]
       },
       {
         "title": "Résultats et impact",
-        "paragraphs": [
-          "Le processus est plus simple à suivre pour les équipes concernées.",
-          "La structure proposée améliore la traçabilité et la gestion des incidents au quotidien."
+        "blocks": [
+          { "type": "paragraph", "text": "Le processus est plus simple à suivre pour les équipes concernées." },
+          { "type": "paragraph", "text": "La structure proposée améliore la traçabilité et la gestion des incidents au quotidien." }
         ]
       },
       {
         "title": "Compétences acquises",
-        "bullets": [
-          "Lecture et structuration d'un processus support.",
-          "Analyse des besoins opérationnels.",
-          "Suivi et documentation des incidents et problèmes."
+        "blocks": [
+          { "type": "bullets", "items": ["Lecture et structuration d'un processus support.", "Analyse des besoins opérationnels.", "Suivi et documentation des incidents et problèmes."] }
         ]
       }
     ],
@@ -140,31 +130,25 @@
     "sections": [
       {
         "title": "Consultant technique CNC",
-        "paragraphs": [
-          "Le volet CNC couvre l'administration technique d'environnements JD Edwards EnterpriseOne.",
-          "Il s'agit de garantir la cohérence des serveurs, des bases de données et des configurations applicatives."
-        ],
-        "images": [
-          "assets/CNC/OMW_JDE.jpg"
+        "blocks": [
+          { "type": "paragraph", "text": "Le volet CNC couvre l'administration technique d'environnements JD Edwards EnterpriseOne." },
+          { "type": "paragraph", "text": "Il s'agit de garantir la cohérence des serveurs, des bases de données et des configurations applicatives." },
+          { "type": "image", "src": "assets/CNC/OMW_JDE.jpg", "caption": "Extrait d'interface JD Edwards" }
         ]
       },
       {
         "title": "Gestion du parc informatique",
-        "paragraphs": [
-          "Cette partie complète la mission avec le suivi du parc informatique et des outils d'assistance.",
-          "Les visuels illustrent les outils utilisés pour le support et la planification."
-        ],
-        "images": [
-          "assets/CNC/Global_Help_Desk_Inetum.PNG",
-          "assets/CNC/Planner_Infra.PNG"
+        "blocks": [
+          { "type": "paragraph", "text": "Cette partie complète la mission avec le suivi du parc informatique et des outils d'assistance." },
+          { "type": "paragraph", "text": "Les visuels illustrent les outils utilisés pour le support et la planification." },
+          { "type": "image", "src": "assets/CNC/Global_Help_Desk_Inetum.PNG", "caption": "Outil d'assistance" },
+          { "type": "image", "src": "assets/CNC/Planner_Infra.PNG", "caption": "Planification et inventaire" }
         ]
       },
       {
         "title": "Compétences acquises",
-        "bullets": [
-          "Administration d'environnements techniques complexes.",
-          "Gestion des outils de support et de suivi.",
-          "Maintien de la disponibilité et de la cohérence de configuration."
+        "blocks": [
+          { "type": "bullets", "items": ["Administration d'environnements techniques complexes.", "Gestion des outils de support et de suivi.", "Maintien de la disponibilité et de la cohérence de configuration."] }
         ]
       }
     ],
@@ -188,34 +172,30 @@
     "sections": [
       {
         "title": "Description générale",
-        "paragraphs": [
-          "Logeproj est une application web dédiée au suivi des budgets, des subventions et des projets associatifs.",
-          "Le projet combine un backend C# et une interface Angular pour centraliser les données de gestion."
+        "blocks": [
+          { "type": "paragraph", "text": "Logeproj est une application web dédiée au suivi des budgets, des subventions et des projets associatifs." },
+          { "type": "paragraph", "text": "Le projet combine un backend C# et une interface Angular pour centraliser les données de gestion." }
         ]
       },
       {
         "title": "Présentation visuelle",
-        "paragraphs": [
-          "Les captures ci-dessous montrent les écrans de suivi et de consultation utilisés dans le projet."
-        ],
-        "images": [
-          "assets/Logeproj/logeproj_suivi_des_temps.png",
-          "assets/Logeproj/logeproj_liste_du_personnel.png"
+        "blocks": [
+          { "type": "paragraph", "text": "Les captures ci-dessous montrent les écrans de suivi et de consultation utilisés dans le projet." },
+          { "type": "image", "src": "assets/Logeproj/logeproj_suivi_des_temps.png", "caption": "Suivi des temps" },
+          { "type": "image", "src": "assets/Logeproj/logeproj_liste_du_personnel.png", "caption": "Liste du personnel" }
         ]
       },
       {
         "title": "Mes contributions",
-        "paragraphs": [
-          "J'ai participé à la conception de l'outil, à la modélisation des données et à l'intégration de l'interface.",
-          "L'objectif était de proposer une base claire pour le suivi des temps, des budgets et des membres."
+        "blocks": [
+          { "type": "paragraph", "text": "J'ai participé à la conception de l'outil, à la modélisation des données et à l'intégration de l'interface." },
+          { "type": "paragraph", "text": "L'objectif était de proposer une base claire pour le suivi des temps, des budgets et des membres." }
         ]
       },
       {
         "title": "Compétences acquises",
-        "bullets": [
-          "Développement full stack C# et Angular.",
-          "Conception d'un outil de gestion métier.",
-          "Organisation des données de suivi."
+        "blocks": [
+          { "type": "bullets", "items": ["Développement full stack C# et Angular.", "Conception d'un outil de gestion métier.", "Organisation des données de suivi."] }
         ]
       }
     ],

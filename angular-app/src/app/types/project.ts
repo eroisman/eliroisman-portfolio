@@ -26,7 +26,21 @@ export interface ProjectLink {
 
 export interface ProjectSection {
   title: string;
+  // New ordered blocks allow interleaving paragraphs and images with captions
+  blocks?: ProjectBlock[];
+  // Back-compat: keep old fields but prefer `blocks`.
   paragraphs?: string[];
   bullets?: string[];
   images?: string[];
+}
+
+export interface ProjectBlock {
+  type: 'paragraph' | 'image' | 'bullets';
+  // for paragraph
+  text?: string;
+  // for image
+  src?: string;
+  caption?: string;
+  // for bullets
+  items?: string[];
 }

@@ -8,27 +8,43 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+			<ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder navbar-nav-spaced">
 				<li class="nav-item"><a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Accueil</a></li>
 				<li class="nav-item"><a class="nav-link" routerLink="/resume" routerLinkActive="active">Curriculum vitæ</a></li>
-				<li class="nav-item dropdown btn-group">
-					<a class="nav-link" routerLink="/projects" routerLinkActive="active">Projets</a>
-					<a class="nav-link dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="true">
-						<span class="sr-only"></span>
+				<li class="nav-item dropdown dropdown-split">
+					<a
+						href="#"
+						class="nav-link nav-link-label"
+						routerLink="/projects"
+						routerLinkActive="active"
+						(click)="closeProjectsDropdown()"
+					>
+						Projets
 					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" routerLink="/projects">Projets</a>
+					<button
+						type="button"
+						class="nav-link dropdown-toggle nav-link-button nav-link-arrow"
+						id="navbarDropdown"
+						aria-haspopup="true"
+						[attr.aria-expanded]="dropdownOpen"
+						(click)="toggleProjectsDropdown($event)"
+						aria-label="Ouvrir le menu Projets"
+					>
+						<span aria-hidden="true"></span>
+					</button>
+					<div class="dropdown-menu dropdown-menu-end" [class.show]="dropdownOpen" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" routerLink="/projects" (click)="closeProjectsDropdown()">Tous les projets</a>
 						@if (projects.length) {
 							<div class="dropdown-divider"></div>
 							<h6 class="dropdown-header">Projets entreprise</h6>
 							@for (project of enterpriseProjects; track project.slug) {
-								<a class="dropdown-item" [routerLink]="['/projects', project.slug]">{{ project.title }}</a>
+								<a class="dropdown-item" [routerLink]="['/projects', project.slug]" (click)="closeProjectsDropdown()">{{ project.title }}</a>
 							}
 							@if (schoolProjects.length) {
 								<div class="dropdown-divider"></div>
 								<h6 class="dropdown-header">Projet école</h6>
 								@for (project of schoolProjects; track project.slug) {
-									<a class="dropdown-item" [routerLink]="['/projects', project.slug]">{{ project.title }}</a>
+									<a class="dropdown-item" [routerLink]="['/projects', project.slug]" (click)="closeProjectsDropdown()">{{ project.title }}</a>
 								}
 							}
 						}
