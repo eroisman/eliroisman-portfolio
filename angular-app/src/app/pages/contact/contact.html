@@ -1,12 +1,12 @@
 <section class="py-5">
   <div class="container px-5 my-5" style="padding-top: 100px;">
     <div class="text-center mb-5">
-      <h1 class="display-4 fw-bolder mb-0"><span class="text-gradient d-inline">Contact</span></h1>
+      <h1 class="display-4 fw-bolder mb-0"><span class="text-gradient d-inline">{{ content?.title ?? 'Contact' }}</span></h1>
       <div class="breadcrumb-container">
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item fw-bolder text-gradient"><a href="#/" style="text-decoration: none;">Accueil</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Contact</li>
+            <li class="breadcrumb-item active" aria-current="page">{{ content?.breadcrumb ?? 'Contact' }}</li>
           </ol>
         </nav>
       </div>
@@ -15,93 +15,95 @@
     <section class="py-5">
       <div class="container px-12">
         <div class="bg-light rounded-4 py-5 px-4 px-md-5">
-          <div class="text-center mb-5">
-            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-            <h1 class="fw-bolder">Me contacter</h1>
-            <p class="lead fw-normal text-muted mb-0">N'hésitez pas à prendre contact avec moi. Vos avis, questions et commentaires sont toujours les bienvenus.<br>Restons en contact !</p>
-          </div>
+          @if (content) {
+            <div class="text-center mb-5">
+              <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+              <h1 class="fw-bolder">{{ content.cardTitle }}</h1>
+              <p class="lead fw-normal text-muted mb-0">{{ content.lead }}</p>
+            </div>
 
-          <div class="row gx-5">
-            <div class="col-lg-6">
-              <form class="row g-3 needs-validation" action="https://formsubmit.co/56b46077251bef36b776c59e08d8e274" method="POST" novalidate enctype="multipart/form-data">
-                <div class="form-floating mb-3 col-md-6">
-                  <input class="form-control" id="firstname" name="firstname" type="text" required>
-                  <label for="firstname">Prénom</label>
-                  <div class="invalid-feedback">Veuillez saisir votre prénom.</div>
-                </div>
+            <div class="row gx-5">
+              <div class="col-lg-6">
+                <form class="row g-3 needs-validation" action="https://formsubmit.co/56b46077251bef36b776c59e08d8e274" method="POST" novalidate enctype="multipart/form-data">
+                  <div class="form-floating mb-3 col-md-6">
+                    <input class="form-control" id="firstname" name="firstname" type="text" required>
+                    <label for="firstname">{{ content.form.firstnameLabel }}</label>
+                    <div class="invalid-feedback">Veuillez saisir votre prénom.</div>
+                  </div>
 
-                <div class="form-floating mb-3 col-md-6">
-                  <input class="form-control" id="name" name="name" type="text" required>
-                  <label for="name">Nom</label>
-                  <div class="invalid-feedback">Veuillez saisir votre nom.</div>
-                </div>
+                  <div class="form-floating mb-3 col-md-6">
+                    <input class="form-control" id="name" name="name" type="text" required>
+                    <label for="name">{{ content.form.nameLabel }}</label>
+                    <div class="invalid-feedback">Veuillez saisir votre nom.</div>
+                  </div>
 
-                <div class="form-floating mb-3">
-                  <input class="form-control" id="email" name="email" type="email" required>
-                  <label for="email">Adresse e-mail</label>
-                  <div class="invalid-feedback">Un e-mail valide est requis.</div>
-                </div>
+                  <div class="form-floating mb-3">
+                    <input class="form-control" id="email" name="email" type="email" required>
+                    <label for="email">{{ content.form.emailLabel }}</label>
+                    <div class="invalid-feedback">Un e-mail valide est requis.</div>
+                  </div>
 
-                <div class="form-floating mb-3">
-                  <input class="form-control" id="phone" name="phone" type="tel" pattern="[0-9]{10}" required>
-                  <label for="phone">Numéro de téléphone</label>
-                  <div class="invalid-feedback">Un numéro de téléphone valide est requis (10 chiffres).</div>
-                </div>
+                  <div class="form-floating mb-3">
+                    <input class="form-control" id="phone" name="phone" type="tel" pattern="[0-9]{10}" required>
+                    <label for="phone">{{ content.form.phoneLabel }}</label>
+                    <div class="invalid-feedback">Un numéro de téléphone valide est requis (10 chiffres).</div>
+                  </div>
 
-                <div class="form-floating mb-3">
-                  <input class="form-control" id="subject" name="subject" type="text" required>
-                  <label for="subject">Sujet</label>
-                  <div class="invalid-feedback">Un sujet est requis.</div>
-                </div>
+                  <div class="form-floating mb-3">
+                    <input class="form-control" id="subject" name="subject" type="text" required>
+                    <label for="subject">{{ content.form.subjectLabel }}</label>
+                    <div class="invalid-feedback">Un sujet est requis.</div>
+                  </div>
 
-                <div class="form-floating mb-3">
-                  <textarea class="form-control" id="message" name="message" style="height: 10rem" required></textarea>
-                  <label for="message">Message</label>
-                  <div class="invalid-feedback">Un message est requis.</div>
-                </div>
+                  <div class="form-floating mb-3">
+                    <textarea class="form-control" id="message" name="message" style="height: 10rem" required></textarea>
+                    <label for="message">{{ content.form.messageLabel }}</label>
+                    <div class="invalid-feedback">Un message est requis.</div>
+                  </div>
 
-                <div class="col-12">
-                  <div class="form-check">
-                    <input class="form-check-input" id="check" type="checkbox" required>
-                    <label for="check" class="form-check-label">
-                      Accepter les <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="conditions-link">conditions d'utilisation &#9432;</a>
-                    </label>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" id="check" type="checkbox" required>
+                      <label for="check" class="form-check-label">
+                        {{ content.form.termsLabel }} <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="conditions-link">&#9432;</a>
+                      </label>
 
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Conditions d'utilisation</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <p>En utilisant ce formulaire de contact, vous consentez à ce que les informations que vous fournissez, telles que votre nom, prénom, adresse e-mail, numéro de téléphone et message, soient collectées et conservées par le propriétaire de ce site Web.</p>
-                            <p>Ces informations seront utilisées pour répondre à votre demande et vous fournir un service approprié, tout en restant protégées et non partagées sans consentement.</p>
-                            <p>En utilisant ce formulaire, vous acceptez ces conditions d'utilisation.</p>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                            <button type="button" class="btn btn-primary" id="acceptButton" (click)="acceptTerms()">Accepter</button>
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">{{ content.terms.title }}</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              @for (paragraph of content.terms.paragraphs; track paragraph) {
+                                <p>{{ paragraph }}</p>
+                              }
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ content.terms.closeLabel }}</button>
+                              <button type="button" class="btn btn-primary" id="acceptButton" (click)="acceptTerms()">{{ content.form.acceptButtonLabel }}</button>
+                            </div>
                           </div>
                         </div>
                       </div>
+                      <div class="invalid-feedback">Vous devez accepter les conditions avant de soumettre votre demande.</div>
                     </div>
-                    <div class="invalid-feedback">Vous devez accepter les conditions avant de soumettre votre demande.</div>
                   </div>
+
+                  <div class="d-grid"><button class="btn btn-primary btn-lg mb-3" id="submitButton" type="submit">{{ content.form.submitButtonLabel }}</button></div>
+                  <input type="hidden" name="_template" value="box">
+                  <input type="hidden" name="_next" [value]="content.form.nextUrl">
+                </form>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="contact__map">
+                  <iframe class="rounded" [src]="safeMapSrc" width="100%" height="520" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-
-                <div class="d-grid"><button class="btn btn-primary btn-lg mb-3" id="submitButton" type="submit">Envoyer</button></div>
-                <input type="hidden" name="_template" value="box">
-                <input type="hidden" name="_next" value="https://eroisman.github.io/eliroisman-portfolio/#/contact">
-              </form>
-            </div>
-
-            <div class="col-lg-6">
-              <div class="contact__map">
-                <iframe class="rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44538.52695157141!2d4.7939306850950665!3d45.758003180567414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ea516ae88797%3A0x408ab2ae4bb21f0!2sLyon!5e0!3m2!1sen!2sfr!4v1689771821255!5m2!1sen!2sfr" width="100%" height="520" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
             </div>
-          </div>
+          }
         </div>
       </div>
     </section>

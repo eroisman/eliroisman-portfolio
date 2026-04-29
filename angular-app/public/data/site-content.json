@@ -1,0 +1,117 @@
+{
+  "home": {
+    "badge": "Développement Web · Bases de données · Sécurité informatique",
+    "eyebrow": "Bienvenue dans mon portfolio",
+    "headline": "Découvrez mon parcours et mes compétences",
+    "primaryAction": {
+      "label": "Curriculum vitæ",
+      "route": "/resume"
+    },
+    "secondaryAction": {
+      "label": "Projets",
+      "route": "/projects"
+    },
+    "profileImage": "assets/profile1.1.png",
+    "aboutTitle": "À propos de moi",
+    "aboutEyebrow": "Qui suis-je ?",
+    "paragraphs": [
+      "Je m'appelle <strong>Eli ROISMAN</strong>, étudiant en <a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-services-informatiques-aux-organisations-option-b-solutions-logicielles-et-applications-metiers\">BTS SIO</a> (Services Informatiques aux Organisations) avec une spécialisation en SLAM (Solutions Logicielles et Applications Métiers) au Lycée polyvalent Jacques Brel à Vénissieux.",
+      "Passionné par l'informatique, j'ai choisi cette filière pour approfondir mes compétences en développement de logiciels et en programmation.",
+      "Actuellement, je suis en alternance chez <a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.inetum.com/en\">Inetum</a>, où j'évolue en tant que Consultant Technique Junior sur le système ERP d'Oracle (<a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.oracle.com/applications/jd-edwards-enterpriseone/\">JD Edwards</a>).",
+      "Au cours de mon parcours académique et professionnel, j'ai acquis une solide base en langages de programmation tels que C#, TypeScript et JavaScript. J'ai également appris à concevoir et à développer des applications web.",
+      "Mon expérience en entreprise m'a également permis de développer une approche méthodique pour répondre aux besoins des utilisateurs et fournir des solutions performantes et intuitives.",
+      "Mon portfolio est un reflet de mon parcours, mettant en avant certains de mes projets les plus marquants, tant au niveau académique qu'en entreprise.",
+      "Vous y trouverez des détails sur mes réalisations, les technologies utilisées et les résultats obtenus. J'ai hâte de partager mon travail avec vous et de discuter de mes compétences, de mes ambitions professionnelles et des opportunités futures.",
+      "N'hésitez pas à parcourir mon portfolio et à me <a class=\"small\" href=\"#/contact\">contacter</a> si vous avez des questions ou si vous souhaitez collaborer sur un projet passionnant. Je suis ouvert à de nouvelles opportunités et impatient de contribuer à des initiatives stimulantes."
+    ],
+    "closingNote": "Merci de votre visite !",
+    "featuredTitle": "Projets mis en avant",
+    "featuredEyebrow": "Quelques réalisations récentes"
+  },
+  "resume": {
+    "title": "Curriculum vitæ",
+    "breadcrumb": "Curriculum vitæ",
+    "aboutTitle": "À propos de moi",
+    "aboutEyebrow": "Qui suis-je ?",
+    "paragraphs": [
+      "Je m'appelle <strong>Eli ROISMAN</strong>, étudiant en <a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-services-informatiques-aux-organisations-option-b-solutions-logicielles-et-applications-metiers\">BTS SIO</a> (Services Informatiques aux Organisations) avec une spécialisation en SLAM (Solutions Logicielles et Applications Métiers) au Lycée polyvalent Jacques Brel à Vénissieux.",
+      "Passionné par l'informatique, j'ai choisi cette filière pour approfondir mes compétences en développement de logiciels et en programmation.",
+      "Actuellement, je suis en alternance chez <a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.inetum.com/en\">Inetum</a>, où j'évolue en tant que Consultant Technique Junior sur le système ERP d'Oracle (<a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.oracle.com/applications/jd-edwards-enterpriseone/\">JD Edwards</a>). Cette expérience en entreprise m'offre une opportunité unique de mettre en pratique mes connaissances théoriques acquises en classe.",
+      "Au cours de mon parcours académique et professionnel, j'ai acquis une solide base en langages de programmation tels que C#, TypeScript et JavaScript. J'ai également appris à concevoir et à développer des applications web. Mon expérience en entreprise m'a également permis de développer une approche méthodique pour répondre aux besoins des utilisateurs et fournir des solutions performantes et intuitives.",
+      "Mon portfolio est un reflet de mon parcours, mettant en avant certains de mes projets les plus marquants, tant au niveau académique qu'en entreprise. Vous y trouverez des détails sur mes réalisations, les technologies utilisées et les résultats obtenus. J'ai hâte de partager mon travail avec vous et de discuter de mes compétences, de mes ambitions professionnelles et des opportunités futures.",
+      "N'hésitez pas à parcourir mon portfolio et à me <a href=\"#/contact\">contacter</a> si vous avez des questions ou si vous souhaitez collaborer sur un projet passionnant. Je suis ouvert à de nouvelles opportunités et impatient de contribuer à des initiatives stimulantes.",
+      "Merci de votre visite !"
+    ],
+    "closingNote": "",
+    "cvButtonLabel": "Télécharger mon CV",
+    "cvUrl": "assets/CV_Eliyahu_ROISMAN.pdf",
+    "experienceTitle": "Expérience",
+    "experienceItems": [
+      {
+        "period": "2022 - Present",
+        "title": "Consultant Technique Junior (Oracle JD Edwords)",
+        "organization": "Inetum Business Solutions",
+        "location": "Lyon, FR",
+        "details": [
+          "En tant que consultant technique junior chez Inetum Business Solutions, j'ai l'opportunité de travailler sur une variété de projets informatiques.",
+          "Gestion des incidents et des tickets.",
+          "Gestion du parc informatique.",
+          "Développement d'une application en Oracle JET."
+        ]
+      }
+    ],
+    "educationTitle": "Éducation",
+    "educationItems": [
+      {
+        "period": "2022 - Présent",
+        "institution": "Lycée Polyvalent Jacques Brel",
+        "location": "Vénissieux, FR",
+        "degree": "BTS SIO",
+        "level": "Option SLAM",
+        "description": "Le BTS SIO (Services Informatiques aux Organisations) est un diplôme de l'enseignement supérieur de deux ans qui vise à former des professionnels capables de gérer et de maintenir des systèmes informatiques au sein des entreprises et organisations."
+      },
+      {
+        "period": "2019",
+        "institution": "IFRA",
+        "location": "Grenoble, FR",
+        "degree": "DELF Pro",
+        "level": "Niveau B2",
+        "description": "Le DELF Pro (Diplôme d'Étude en Langue Française option Professionnelle) est un diplôme d'études en langue française au niveau professionnel. Il atteste d'un niveau intermédiaire de compétence en français (B2) et est reconnu à l'échelle internationale."
+      }
+    ],
+    "certificationTitle": "Parcours de certification complémentaires",
+    "certificationIframeUrl": "https://onedrive.live.com/embed?resid=5F2A778F915B0ED3%219569&authkey=!ABtBIoVmofJWBAM&em=2&wdAr=1.7777777777777777&wdEaaCheck=0"
+  },
+  "contact": {
+    "title": "Contact",
+    "breadcrumb": "Contact",
+    "cardTitle": "Me contacter",
+    "lead": "N'hésitez pas à prendre contact avec moi. Vos avis, questions et commentaires sont toujours les bienvenus. Restons en contact !",
+    "form": {
+      "firstnameLabel": "Prénom",
+      "nameLabel": "Nom",
+      "emailLabel": "Adresse e-mail",
+      "phoneLabel": "Numéro de téléphone",
+      "subjectLabel": "Sujet",
+      "messageLabel": "Message",
+      "termsLabel": "Accepter les conditions d'utilisation",
+      "acceptButtonLabel": "Accepter",
+      "submitButtonLabel": "Envoyer",
+      "privacyNote": "En utilisant ce formulaire de contact, vous consentez à ce que les informations que vous fournissez, telles que votre nom, prénom, adresse e-mail, numéro de téléphone et message, soient collectées et conservées par le propriétaire de ce site Web. Ces informations seront utilisées pour répondre à votre demande et vous fournir un service approprié, tout en restant protégées et non partagées sans consentement.",
+      "nextUrl": "https://eroisman.github.io/eliroisman-portfolio/#/contact"
+    },
+    "terms": {
+      "title": "Conditions d'utilisation",
+      "paragraphs": [
+        "En utilisant ce formulaire de contact, vous consentez à ce que les informations que vous fournissez, telles que votre nom, prénom, adresse e-mail, numéro de téléphone et message, soient collectées et conservées par le propriétaire de ce site Web.",
+        "Ces informations seront utilisées pour répondre à votre demande et vous fournir un service approprié, tout en restant protégées et non partagées sans consentement.",
+        "En utilisant ce formulaire, vous acceptez ces conditions d'utilisation."
+      ],
+      "closeLabel": "Fermer"
+    },
+    "map": {
+      "title": "Carte de localisation",
+      "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44538.52695157141!2d4.7939306850950665!3d45.758003180567414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ea516ae88797%3A0x408ab2ae4bb21f0!2sLyon!5e0!3m2!1sen!2sfr!4v1689771821255!5m2!1sen!2sfr"
+    }
+  }
+}

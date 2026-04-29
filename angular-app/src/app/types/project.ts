@@ -5,4 +5,28 @@ export interface Project {
   summary: string;
   details: string;
   image: string;
+  description?: string;
+  technologies?: string[];
+  highlights?: string[];
+  context?: string;
+  role?: string;
+  challenge?: string;
+  outcome?: string;
+  links?: ProjectLink[];
+  sections?: ProjectSection[];
+  featured?: boolean;
+  order?: number;
+  tags?: string[];
+}
+
+export interface ProjectLink {
+  label: string;
+  url: string;
+}
+
+export interface ProjectSection {
+  title: string;
+  paragraphs?: string[];
+  bullets?: string[];
+  images?: string[];
 }

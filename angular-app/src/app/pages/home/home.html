@@ -3,21 +3,25 @@
 		<div class="row gx-5 align-items-center">
 			<div class="col-xxl-5">
 				<div class="text-center text-xxl-start">
-					<div class="badge bg-gradient-primary-to-secondary text-white mb-4">
-						<div class="text-uppercase">Développement Web &middot; Bases de données &middot; Sécurité informatique</div>
-					</div>
-					<div class="fs-3 fw-light text-muted">Bienvenue dans mon portfolio</div>
-					<h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Découvrez mon parcours et mes compétences</span></h1>
+					@if (content) {
+						<div class="badge bg-gradient-primary-to-secondary text-white mb-4">
+							<div class="text-uppercase">{{ content.badge }}</div>
+						</div>
+						<div class="fs-3 fw-light text-muted">{{ content.eyebrow }}</div>
+						<h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">{{ content.headline }}</span></h1>
+					}
 					<div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-						<a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" routerLink="/resume">Curriculum vitæ</a>
-						<a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" routerLink="/projects">Projets</a>
+						@if (content) {
+							<a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" [routerLink]="content.primaryAction.route">{{ content.primaryAction.label }}</a>
+							<a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" [routerLink]="content.secondaryAction.route">{{ content.secondaryAction.label }}</a>
+						}
 					</div>
 				</div>
 			</div>
 			<div class="col-xxl-7">
 				<div class="d-flex justify-content-center mt-5 mt-xxl-0">
 					<div class="profile bg-gradient-primary-to-secondary">
-						<img class="profile-img" src="assets/profile1.1.png" alt="Photo de profil">
+						<img class="profile-img" [src]="content?.profileImage ?? 'assets/profile1.1.png'" alt="Photo de profil">
 					</div>
 				</div>
 			</div>
@@ -30,32 +34,41 @@
 		<div class="row gx-5 justify-content-center">
 			<div class="col-xxl-8">
 				<div class="text-center my-5">
-					<h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">À propos de moi</span></h2>
-					<p class="lead fw-light mb-4">Qui suis-je ?</p>
-					<p class="text-muted">
-						Je m'appelle <strong>Eli ROISMAN</strong>, étudiant en
-						<a target="_blank" href="https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-services-informatiques-aux-organisations-option-b-solutions-logicielles-et-applications-metiers" style="text-decoration: none;">BTS SIO</a>
-						(Services Informatiques aux Organisations) avec une spécialisation en SLAM (Solutions Logicielles et Applications Métiers) au Lycée polyvalent Jacques Brel à Vénissieux.
-						Passionné par l'informatique, j'ai choisi cette filière pour approfondir mes compétences en développement de logiciels et en programmation.
-						<br><br>
-						Actuellement, je suis en alternance chez <a target="_blank" href="https://www.inetum.com/en" style="text-decoration: none;">Inetum</a>, où j'évolue en tant que Consultant Technique Junior sur
-						le système ERP d'Oracle (<a target="_blank" href="https://www.oracle.com/applications/jd-edwards-enterpriseone/" style="text-decoration: none;">JD Edwards</a>).
-						<br><br>
-						Au cours de mon parcours académique et professionnel, j'ai acquis une solide base en langages de programmation tels que C#, TypeScript
-						et JavaScript. J'ai également appris à concevoir et à développer des applications web. Mon expérience en entreprise m'a également permis de développer
-						une approche méthodique pour répondre aux besoins des utilisateurs et fournir des solutions performantes et intuitives.
-						<br><br>
-						Mon portfolio est un reflet de mon parcours, mettant en avant certains de mes projets les plus marquants, tant au niveau académique qu'en entreprise.
-						Vous y trouverez des détails sur mes réalisations, les technologies utilisées et les résultats obtenus. J'ai hâte de partager mon travail avec
-						vous et de discuter de mes compétences, de mes ambitions professionnelles et des opportunités futures.
-						<br><br>
-						N'hésitez pas à parcourir mon portfolio et à me <a class="small" routerLink="/contact" style="text-decoration: none;">contacter</a> si vous avez des questions ou si vous souhaitez collaborer sur un projet passionnant.
-						Je suis ouvert à de nouvelles opportunités et impatient de contribuer à des initiatives stimulantes.
-						<br><br>
-						Merci de votre visite !
-					</p>
+					@if (content) {
+						<h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">{{ content.aboutTitle }}</span></h2>
+						<p class="lead fw-light mb-4">{{ content.aboutEyebrow }}</p>
+						@for (paragraph of content.paragraphs; track paragraph) {
+							<p class="text-muted" [innerHTML]="paragraph"></p>
+						}
+						<p class="text-muted">{{ content.closingNote }}</p>
+					}
 				</div>
 			</div>
+		</div>
+	</div>
+</section>
+
+<section class="py-5">
+	<div class="container px-5">
+		<div class="text-center mb-5">
+			@if (content) {
+				<h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">{{ content.featuredTitle }}</span></h2>
+				<p class="lead fw-light mb-0">{{ content.featuredEyebrow }}</p>
+			}
+		</div>
+		<div class="row g-4">
+			@for (project of featuredProjects; track project.slug) {
+				<div class="col-md-6 col-lg-4">
+					<div class="card shadow border-0 rounded-4 h-100">
+						<div class="card-body p-4 d-flex flex-column">
+							<img class="img-fluid rounded-4 mb-3" [src]="project.image" [alt]="project.title">
+							<p class="small text-muted mb-2">{{ project.category }}</p>
+							<h3 class="h5 fw-bolder"><a [routerLink]="['/projects', project.slug]" style="text-decoration: none;">{{ project.title }}</a></h3>
+							<p class="mb-0 text-muted">{{ project.summary }}</p>
+						</div>
+					</div>
+				</div>
+			}
 		</div>
 	</div>
 </section>

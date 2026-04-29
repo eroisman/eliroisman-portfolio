@@ -5,7 +5,72 @@
     "category": "Projet entreprise",
     "summary": "Application Web mobile pour interaction entre magasinier et ERP d'entreprise.",
     "details": "MobeeX est une application orientée logistique, développée en TypeScript avec OracleJET. Elle optimise le travail terrain en entrepot et la synchronisation des operations.",
-    "image": "assets/MobeeX/logo M4.png"
+    "description": "Application mobile métier pour fluidifier les échanges entre le magasinier et l'ERP de l'entreprise.",
+    "image": "assets/MobeeX/logo M4.png",
+    "technologies": ["TypeScript", "OracleJET", "Applications métier"],
+    "highlights": ["Amélioration des échanges terrain/ERP", "Interface pensée pour la mobilité", "Synchronisation des opérations en entrepôt"],
+    "context": "Projet entreprise orienté logistique et exécution terrain.",
+    "role": "Développement et intégration côté front métier.",
+    "challenge": "Faciliter la saisie et la consultation d'informations dans un contexte d'entrepôt.",
+    "outcome": "L'application aide à réduire les frictions entre le terrain et les systèmes centraux.",
+    "sections": [
+      {
+        "title": "Description générale",
+        "paragraphs": [
+          "MobeeX est une solution de mobilité destinée aux utilisateurs terrain d'Inetum Business Solutions.",
+          "Le projet connecte une interface mobile à JD Edwards afin de rendre les dialogues métier plus rapides et plus fiables."
+        ]
+      },
+      {
+        "title": "Présentation visuelle",
+        "paragraphs": [
+          "L'application est pensée pour les terminaux mobiles de type Zebra et les usages en entrepôt.",
+          "L'interface met en avant les écrans essentiels pour l'authentification, la navigation et les opérations courantes."
+        ],
+        "images": [
+          "assets/MobeeX/ZEBRA-1.jpg",
+          "assets/MobeeX/login_en.PNG",
+          "assets/MobeeX/ecran_wellcome_en.PNG",
+          "assets/MobeeX/menu_en.PNG",
+          "assets/MobeeX/menu_inventory_management_en.PNG",
+          "assets/MobeeX/menu_production_en.PNG"
+        ]
+      },
+      {
+        "title": "Mes contributions",
+        "paragraphs": [
+          "J'ai participé à l'intégration des dialogues métier liés à la gestion de stock et aux flux opérationnels.",
+          "Le projet inclut aussi des interactions JDE dédiées à la sortie sur OF et à la récupération des données."
+        ],
+        "images": [
+          "assets/MobeeX/ecran_jde_P31113_XMOB001.PNG",
+          "assets/MobeeX/orchestration_jde.PNG",
+          "assets/MobeeX/menu_en_2.PNG",
+          "assets/MobeeX/material_issue_en.PNG",
+          "assets/MobeeX/material_issue_search.PNG",
+          "assets/MobeeX/quantity_issued.PNG",
+          "assets/MobeeX/quantity_issued_jde.PNG",
+          "assets/MobeeX/jde_error_en.PNG",
+          "assets/MobeeX/search_error_en.PNG"
+        ]
+      },
+      {
+        "title": "Compétences acquises",
+        "bullets": [
+          "Conception d'une interface mobile métier.",
+          "Intégration avec un ERP industriel.",
+          "Gestion de parcours utilisateur sur terminaux dédiés."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Projet associé",
+        "url": "#/projects"
+      }
+    ],
+    "featured": true,
+    "order": 1
   },
   {
     "slug": "ipm",
@@ -13,7 +78,50 @@
     "category": "Projet entreprise",
     "summary": "Processus de gestion des incidents et des problemes en environnement SI.",
     "details": "Ce projet formalise l'identification, l'evaluation et la resolution des incidents/problemes pour reduire l'impact operationnel et fiabiliser le suivi.",
-    "image": "assets/Projets/Incident_Management.png"
+    "description": "Gestion structurée des incidents et des problèmes pour améliorer le suivi et la résolution dans un environnement SI.",
+    "image": "assets/Projets/Incident_Management.png",
+    "technologies": ["Gestion de processus", "Support SI", "Suivi opérationnel"],
+    "highlights": ["Formalisation du cycle incident/problème", "Réduction de l'impact opérationnel", "Meilleure traçabilité du suivi"],
+    "context": "Projet entreprise centré sur la fiabilité du support opérationnel.",
+    "role": "Analyse et structuration du processus de gestion.",
+    "challenge": "Rendre le suivi des incidents plus clair et plus efficace.",
+    "outcome": "Le processus devient plus lisible et plus simple à piloter.",
+    "sections": [
+      {
+        "title": "Description générale",
+        "paragraphs": [
+          "IPM structure un processus de gestion des incidents et des problèmes pour mieux cadrer le support SI.",
+          "Le but est de rendre les actions de suivi plus lisibles et de mieux répartir les responsabilités."
+        ]
+      },
+      {
+        "title": "Outils de travail",
+        "paragraphs": [
+          "Les visuels ci-dessous illustrent l'environnement de suivi et les tickets utilisés pendant la mission."
+        ],
+        "images": [
+          "assets/IPM/hurra.PNG",
+          "assets/IPM/ticket_hurra.PNG"
+        ]
+      },
+      {
+        "title": "Résultats et impact",
+        "paragraphs": [
+          "Le processus est plus simple à suivre pour les équipes concernées.",
+          "La structure proposée améliore la traçabilité et la gestion des incidents au quotidien."
+        ]
+      },
+      {
+        "title": "Compétences acquises",
+        "bullets": [
+          "Lecture et structuration d'un processus support.",
+          "Analyse des besoins opérationnels.",
+          "Suivi et documentation des incidents et problèmes."
+        ]
+      }
+    ],
+    "featured": true,
+    "order": 2
   },
   {
     "slug": "cnc",
@@ -21,14 +129,97 @@
     "category": "Projet entreprise",
     "summary": "Administration centralisee des environnements JD Edwards EnterpriseOne.",
     "details": "Le volet CNC couvre la configuration des serveurs, bases de donnees et applications via une architecture centralisee pour assurer coherence et disponibilite.",
-    "image": "assets/Projets/Logo_JDE.png"
+    "description": "Administration centralisée des environnements JD Edwards EnterpriseOne afin d'assurer cohérence et disponibilité.",
+    "image": "assets/Projets/Logo_JDE.png",
+    "technologies": ["JD Edwards EnterpriseOne", "Administration système", "Bases de données"],
+    "highlights": ["Configuration centralisée", "Gestion des serveurs et bases de données", "Support à la disponibilité des applications"],
+    "context": "Projet entreprise lié à l'administration CNC.",
+    "role": "Support technique et administration de l'environnement.",
+    "challenge": "Maintenir un socle technique stable et cohérent.",
+    "outcome": "L'environnement gagne en disponibilité et en cohérence de configuration.",
+    "sections": [
+      {
+        "title": "Consultant technique CNC",
+        "paragraphs": [
+          "Le volet CNC couvre l'administration technique d'environnements JD Edwards EnterpriseOne.",
+          "Il s'agit de garantir la cohérence des serveurs, des bases de données et des configurations applicatives."
+        ],
+        "images": [
+          "assets/CNC/OMW_JDE.jpg"
+        ]
+      },
+      {
+        "title": "Gestion du parc informatique",
+        "paragraphs": [
+          "Cette partie complète la mission avec le suivi du parc informatique et des outils d'assistance.",
+          "Les visuels illustrent les outils utilisés pour le support et la planification."
+        ],
+        "images": [
+          "assets/CNC/Global_Help_Desk_Inetum.PNG",
+          "assets/CNC/Planner_Infra.PNG"
+        ]
+      },
+      {
+        "title": "Compétences acquises",
+        "bullets": [
+          "Administration d'environnements techniques complexes.",
+          "Gestion des outils de support et de suivi.",
+          "Maintien de la disponibilité et de la cohérence de configuration."
+        ]
+      }
+    ],
+    "featured": true,
+    "order": 3
   },
   {
     "slug": "logeproj",
     "title": "Logeproj",
-    "category": "Projet ecole",
+    "category": "Projet école",
     "summary": "Logiciel de gestion de budget, subventions et projets pour associations.",
     "details": "Logeproj combine un backend C# et un frontend Angular. L'objectif est d'accompagner les associations dans la planification et le suivi financier de leurs projets.",
-    "image": "assets/Projets/Logo_Logeproj.png"
+    "description": "Outil web de gestion budgétaire et de pilotage de projets pour accompagner les associations.",
+    "image": "assets/Projets/Logo_Logeproj.png",
+    "technologies": ["C#", "Angular", "Gestion de budget"],
+    "highlights": ["Suivi des budgets et subventions", "Front Angular", "Backend C#"],
+    "context": "Projet scolaire construit autour d'un besoin de gestion associative.",
+    "role": "Conception et développement full stack.",
+    "challenge": "Aider à structurer le suivi financier des projets associatifs.",
+    "outcome": "L'application fournit un cadre clair pour planifier et suivre les budgets.",
+    "sections": [
+      {
+        "title": "Description générale",
+        "paragraphs": [
+          "Logeproj est une application web dédiée au suivi des budgets, des subventions et des projets associatifs.",
+          "Le projet combine un backend C# et une interface Angular pour centraliser les données de gestion."
+        ]
+      },
+      {
+        "title": "Présentation visuelle",
+        "paragraphs": [
+          "Les captures ci-dessous montrent les écrans de suivi et de consultation utilisés dans le projet."
+        ],
+        "images": [
+          "assets/Logeproj/logeproj_suivi_des_temps.png",
+          "assets/Logeproj/logeproj_liste_du_personnel.png"
+        ]
+      },
+      {
+        "title": "Mes contributions",
+        "paragraphs": [
+          "J'ai participé à la conception de l'outil, à la modélisation des données et à l'intégration de l'interface.",
+          "L'objectif était de proposer une base claire pour le suivi des temps, des budgets et des membres."
+        ]
+      },
+      {
+        "title": "Compétences acquises",
+        "bullets": [
+          "Développement full stack C# et Angular.",
+          "Conception d'un outil de gestion métier.",
+          "Organisation des données de suivi."
+        ]
+      }
+    ],
+    "featured": true,
+    "order": 4
   }
 ]

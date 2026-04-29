@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Project } from '../../types/project';
 import { ProjectsService } from '../../services/projects.service';
@@ -14,6 +14,8 @@ export class ProjectDetail {
   protected loading = true;
   protected hasError = false;
 
+  private readonly cdr = inject(ChangeDetectorRef);
+
   constructor(
     private readonly route: ActivatedRoute,
     private readonly projectsService: ProjectsService
@@ -26,6 +28,7 @@ export class ProjectDetail {
       if (!slug) {
         this.project = undefined;
         this.loading = false;
+        this.cdr.detectChanges();
         return;
       }
 
@@ -33,14 +36,20 @@ export class ProjectDetail {
         next: (project) => {
           this.project = project;
           this.loading = false;
+          this.cdr.detectChanges();
         },
         error: (error) => {
           console.error('Error loading project detail:', error);
           this.project = undefined;
           this.hasError = true;
           this.loading = false;
+          this.cdr.detectChanges();
         }
       });
     });
+  }
+
+  protected get projectDescription(): string {
+    return this.project?.description ?? this.project?.details ?? '';
   }
 }

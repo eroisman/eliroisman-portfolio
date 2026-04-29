@@ -1,12 +1,14 @@
 <section class="py-5 bg-light">
   <div class="container px-5 my-5" style="padding-top: 100px;">
     <div class="text-center mb-5">
-      <h1 class="display-4 fw-bolder mb-0"><span class="text-gradient d-inline">Curriculum vitæ</span></h1>
+      @if (content) {
+        <h1 class="display-4 fw-bolder mb-0"><span class="text-gradient d-inline">{{ content.title }}</span></h1>
+      }
       <div class="breadcrumb-container">
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item fw-bolder text-gradient"><a href="#/" style="text-decoration: none;">Accueil</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Curriculum vitæ</li>
+            <li class="breadcrumb-item active" aria-current="page">{{ content?.breadcrumb ?? 'Curriculum vitæ' }}</li>
           </ol>
         </nav>
       </div>
@@ -19,29 +21,16 @@
             <div class="row gx-5 justify-content-center">
               <div class="col-xxl-auto">
                 <div class="text-center my-5">
-                  <h2 class="display-6 fw-bolder"><span class="text-gradient d-inline">À propos de moi</span></h2>
-                  <p class="lead fw-light mb-4">Qui suis-je ?</p>
-                  <p class="text-muted">
-                    Je m'appelle <strong>Eli ROISMAN</strong>, étudiant en
-                    <a target="_blank" href="https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-services-informatiques-aux-organisations-option-b-solutions-logicielles-et-applications-metiers" style="text-decoration: none;">BTS SIO</a>
-                    (Services Informatiques aux Organisations) avec une spécialisation en SLAM (Solutions Logicielles et Applications Métiers) au Lycée polyvalent Jacques Brel à Vénissieux. Passionné par l'informatique, j'ai choisi cette filière pour approfondir mes compétences en développement de logiciels et en programmation.
-                  </p>
-                  <p class="text-muted">
-                    Actuellement, je suis en alternance chez <a target="_blank" href="https://www.inetum.com/en" style="text-decoration: none;">Inetum</a>, où j'évolue en tant que Consultant Technique Junior sur le système ERP d'Oracle
-                    (<a target="_blank" href="https://www.oracle.com/applications/jd-edwards-enterpriseone/" style="text-decoration: none;">JD Edwards</a>). Cette expérience en entreprise m'offre une opportunité unique de mettre en pratique mes connaissances théoriques acquises en classe.
-                  </p>
-                  <p class="text-muted">
-                    Au cours de mon parcours académique et professionnel, j'ai acquis une solide base en langages de programmation tels que C#, TypeScript et JavaScript. J'ai également appris à concevoir et à développer des applications web. Mon expérience en entreprise m'a également permis de développer une approche méthodique pour répondre aux besoins des utilisateurs et fournir des solutions performantes et intuitives.
-                  </p>
-                  <p class="text-muted">
-                    Mon portfolio est un reflet de mon parcours, mettant en avant certains de mes projets les plus marquants, tant au niveau académique qu'en entreprise. Vous y trouverez des détails sur mes réalisations, les technologies utilisées et les résultats obtenus. J'ai hâte de partager mon travail avec vous et de discuter de mes compétences, de mes ambitions professionnelles et des opportunités futures.
-                  </p>
-                  <p class="text-muted">
-                    N'hésitez pas à parcourir mon portfolio et à me <a href="#/contact" style="text-decoration: none;">contacter</a> si vous avez des questions ou si vous souhaitez collaborer sur un projet passionnant. Je suis ouvert à de nouvelles opportunités et impatient de contribuer à des initiatives stimulantes.
-                  </p>
-                  <p class="text-muted">
-                    Merci de votre visite !
-                  </p>
+                  @if (content) {
+                    <h2 class="display-6 fw-bolder"><span class="text-gradient d-inline">{{ content.aboutTitle }}</span></h2>
+                    <p class="lead fw-light mb-4">{{ content.aboutEyebrow }}</p>
+                    @for (paragraph of content.paragraphs; track paragraph) {
+                      <p class="text-muted" [innerHTML]="paragraph"></p>
+                    }
+                    @if (content.closingNote) {
+                      <p class="text-muted">{{ content.closingNote }}</p>
+                    }
+                  }
                 </div>
               </div>
             </div>
@@ -50,92 +39,71 @@
 
         <section>
           <div class="d-flex align-items-center justify-content-between mb-4">
-            <h2 class="text-primary fw-bolder mb-0">Expérience</h2>
-            <a class="btn btn-primary px-4 py-1" target="_blank" href="assets/CV_Eliyahu_ROISMAN.pdf">
+            <h2 class="text-primary fw-bolder mb-0">{{ content?.experienceTitle ?? 'Expérience' }}</h2>
+            <a class="btn btn-primary px-4 py-1" target="_blank" [href]="content?.cvUrl ?? 'assets/CV_Eliyahu_ROISMAN.pdf'">
               <div class="d-inline-block bi bi-download me-2"></div>
-              Télécharger mon CV
+              {{ content?.cvButtonLabel ?? 'Télécharger mon CV' }}
             </a>
           </div>
 
-          <div class="card shadow border-0 rounded-4 mb-5">
-            <div class="card-body p-5">
-              <div class="row align-items-center gx-5">
-                <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                  <div class="bg-light p-4 rounded-4">
-                    <div class="text-primary fw-bolder mb-2">2022 - Present</div>
-                    <div class="small fw-bolder">Consultant Technique Junior (Oracle JD Edwords)</div>
-                    <div class="small text-muted">Inetum Business Solutions</div>
-                    <div class="small text-muted">Lyon, FR</div>
+          @for (item of content?.experienceItems ?? []; track item.period + item.title) {
+            <div class="card shadow border-0 rounded-4 mb-5">
+              <div class="card-body p-5">
+                <div class="row align-items-center gx-5">
+                  <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                    <div class="bg-light p-4 rounded-4">
+                      <div class="text-primary fw-bolder mb-2">{{ item.period }}</div>
+                      <div class="small fw-bolder">{{ item.title }}</div>
+                      <div class="small text-muted">{{ item.organization }}</div>
+                      <div class="small text-muted">{{ item.location }}</div>
+                    </div>
                   </div>
-                </div>
-                <div class="col-lg-8">
-                  <div>
-                    En tant que consultant technique junior chez Inetum Business Solutions, j'ai l'opportunité de travailler sur une variété de projets informatiques.
-                    <ul>
-                      <li>Gestion des incidents et des tickets.</li>
-                      <li>Gestion du parc informatique.</li>
-                      <li>Développement d'une application en Oracle JET.</li>
-                    </ul>
+                  <div class="col-lg-8">
+                    <div>
+                      @for (detail of item.details; track detail) {
+                        <p class="mb-2" [innerHTML]="detail"></p>
+                      }
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          }
         </section>
 
         <section>
-          <h2 class="text-secondary fw-bolder mb-4">Éducation</h2>
-          <div class="card shadow border-0 rounded-4 mb-5">
-            <div class="card-body p-5">
-              <div class="row align-items-center gx-5">
-                <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                  <div class="bg-light p-4 rounded-4">
-                    <div class="text-secondary fw-bolder mb-2">2022 - Présent</div>
-                    <div class="mb-2">
-                      <div class="small fw-bolder">Lycée Polyvalent Jacques Brel</div>
-                      <div class="small text-muted">Vénissieux, FR</div>
-                    </div>
-                    <div class="fst-italic">
-                      <div class="small text-muted">BTS SIO</div>
-                      <div class="small text-muted">Option SLAM</div>
+          <h2 class="text-secondary fw-bolder mb-4">{{ content?.educationTitle ?? 'Éducation' }}</h2>
+          @for (item of content?.educationItems ?? []; track item.period + item.institution) {
+            <div class="card shadow border-0 rounded-4 mb-5">
+              <div class="card-body p-5">
+                <div class="row align-items-center gx-5">
+                  <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                    <div class="bg-light p-4 rounded-4">
+                      <div class="text-secondary fw-bolder mb-2">{{ item.period }}</div>
+                      <div class="mb-2">
+                        <div class="small fw-bolder">{{ item.institution }}</div>
+                        <div class="small text-muted">{{ item.location }}</div>
+                      </div>
+                      <div class="fst-italic">
+                        <div class="small text-muted">{{ item.degree }}</div>
+                        <div class="small text-muted">{{ item.level }}</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-lg-8">
-                  Le <a target="_blank" href="https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-services-informatiques-aux-organisations-option-b-solutions-logicielles-et-applications-metiers" style="text-decoration: none;">BTS SIO</a> (Services Informatiques aux Organisations) est un diplôme de l'enseignement supérieur de deux ans qui vise à former des professionnels capables de gérer et de maintenir des systèmes informatiques au sein des entreprises et organisations.
+                  <div class="col-lg-8">
+                    <p class="mb-0" [innerHTML]="item.description"></p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="card shadow border-0 rounded-4 mb-5">
-            <div class="card-body p-5">
-              <div class="row align-items-center gx-5">
-                <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                  <div class="bg-light p-4 rounded-4">
-                    <div class="text-secondary fw-bolder mb-2">2019</div>
-                    <div class="mb-2">
-                      <div class="small fw-bolder">IFRA</div>
-                      <div class="small text-muted">Grenoble, FR</div>
-                    </div>
-                    <div class="fst-italic">
-                      <div class="small text-muted">DELF Pro</div>
-                      <div class="small text-muted">Niveau B2</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-8">
-                  Le <a target="_blank" href="https://www.france-education-international.fr/diplome/delf-tout-public/niveau-b2?langue=fr" style="text-decoration: none;">DELF Pro</a> (Diplôme d'Étude en Langue Française option Professionnelle) est un diplôme d'études en langue française au niveau professionnel. Il atteste d'un niveau intermédiaire de compétence en français (B2) et est reconnu à l'échelle internationale
-                </div>
-              </div>
-            </div>
-          </div>
+          }
         </section>
 
         <section>
-          <h2 class="text-gradient fw-bolder mb-4">Parcours de certification complémentaires</h2>
+          <h2 class="text-gradient fw-bolder mb-4">{{ content?.certificationTitle ?? 'Parcours de certification complémentaires' }}</h2>
           <div class="card shadow border-0 rounded-4 mb-5 mt-5">
             <div class="card-body p-4">
-              <iframe class="rounded" src="https://onedrive.live.com/embed?resid=5F2A778F915B0ED3%219569&amp;authkey=!ABtBIoVmofJWBAM&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=0" width="100%" height="750px" allowfullscreen="true"></iframe>
+              <iframe class="rounded" [src]="content?.certificationIframeUrl" width="100%" height="750px" allowfullscreen="true"></iframe>
             </div>
           </div>
         </section>

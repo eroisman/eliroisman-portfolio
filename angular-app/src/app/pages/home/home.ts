@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { forkJoin } from 'rxjs';
+import { Project } from '../../types/project';
+import { HomeContent } from '../../types/site-content';
+import { ProjectsService } from '../../services/projects.service';
+import { SiteContentService } from '../../services/site-content.service';
 
 @Component({
   selector: 'app-home',
@@ -7,4 +12,27 @@ import { RouterLink } from '@angular/router';
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {}
+export class Home implements OnInit {
+  protected content?: HomeContent;
+  protected featuredProjects: Project[] = [];
+  protected loading = true;
+
+  private readonly cdr = inject(ChangeDetectorRef);
+
+  constructor(
+    private readonly siteContentService: SiteContentService,
+    private readonly projectsService: ProjectsService
+  ) {}
+
+  ngOnInit(): void {
+    forkJoin({
+      content: this.siteContentService.getHomeContent(),
+      projects: this.projectsService.getFeaturedProjects(3)
+    }).subscribe(({ content, projects }) => {
+      this.content = content;
+      this.featuredProjects = projects;
+      this.loading = false;
+      this.cdr.detectChanges();
+    });
+  }
+}

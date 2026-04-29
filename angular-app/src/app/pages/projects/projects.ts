@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Project } from '../../types/project';
 import { ProjectsService } from '../../services/projects.service';
@@ -14,6 +14,8 @@ export class Projects implements OnInit {
   protected loading = true;
   protected error = false;
 
+  private readonly cdr = inject(ChangeDetectorRef);
+
   constructor(private readonly projectsService: ProjectsService) {}
 
   ngOnInit(): void {
@@ -23,11 +25,13 @@ export class Projects implements OnInit {
         console.log('Projects loaded:', projects);
         this.projects = projects;
         this.loading = false;
+        this.cdr.detectChanges();
       },
       error: (err) => {
         console.error('Error in projects component:', err);
         this.error = true;
         this.loading = false;
+        this.cdr.detectChanges();
       },
       complete: () => {
         console.log('Projects loading complete');

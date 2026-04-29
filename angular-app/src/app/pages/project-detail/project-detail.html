@@ -13,7 +13,47 @@
 			<div class="text-center mb-5">
 				<h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">{{ project.title }}</span></h1>
 				<p class="text-muted mt-3">{{ project.category }}</p>
+				<div class="breadcrumb-container">
+					<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item fw-bolder text-gradient"><a [routerLink]="['/']">Accueil</a></li>
+							<li class="breadcrumb-item fw-bolder text-gradient"><a [routerLink]="['/projects']">Projets</a></li>
+							<li class="breadcrumb-item active" aria-current="page">{{ project.title }}</li>
+						</ol>
+					</nav>
+				</div>
 			</div>
+
+			@if (project.sections?.length) {
+				<div class="mb-5">
+					@for (section of project.sections; track section.title) {
+						<div class="card shadow border-0 rounded-4 mb-4">
+							<div class="card-body p-5">
+								<h2 class="h4 fw-bolder mb-3">{{ section.title }}</h2>
+								@for (paragraph of section.paragraphs ?? []; track paragraph) {
+									<p>{{ paragraph }}</p>
+								}
+								@if (section.bullets?.length) {
+									<ul class="mb-0">
+										@for (bullet of section.bullets; track bullet) {
+											<li>{{ bullet }}</li>
+										}
+									</ul>
+								}
+								@if (section.images?.length) {
+									<div class="row g-4 mt-3">
+										@for (image of section.images; track image) {
+											<div class="col-md-6">
+												<img class="img-fluid rounded-4" [src]="image" [alt]="section.title">
+											</div>
+										}
+									</div>
+								}
+							</div>
+						</div>
+					}
+				</div>
+			}
 
 			<div class="card shadow border-0 rounded-4 mb-5">
 				<div class="card-body p-5">
@@ -23,7 +63,61 @@
 						</div>
 						<div class="col-lg-8">
 							<p class="lead">{{ project.summary }}</p>
-							<p>{{ project.details }}</p>
+							<p>{{ projectDescription }}</p>
+							@if (project.context) {
+								<div class="mb-3">
+									<h2 class="h6 text-uppercase text-muted fw-bolder">Contexte</h2>
+									<p class="mb-0">{{ project.context }}</p>
+								</div>
+							}
+							@if (project.role) {
+								<div class="mb-3">
+									<h2 class="h6 text-uppercase text-muted fw-bolder">Rôle</h2>
+									<p class="mb-0">{{ project.role }}</p>
+								</div>
+							}
+							@if (project.technologies?.length) {
+								<div class="mb-3">
+									<h2 class="h6 text-uppercase text-muted fw-bolder">Technologies</h2>
+									<div class="d-flex flex-wrap gap-2">
+										@for (technology of project.technologies; track technology) {
+											<span class="badge rounded-pill bg-dark">{{ technology }}</span>
+										}
+									</div>
+								</div>
+							}
+							@if (project.highlights?.length) {
+								<div class="mb-3">
+									<h2 class="h6 text-uppercase text-muted fw-bolder">Points clés</h2>
+									<ul class="mb-0">
+										@for (highlight of project.highlights; track highlight) {
+											<li>{{ highlight }}</li>
+										}
+									</ul>
+								</div>
+							}
+							@if (project.challenge) {
+								<div class="mb-3">
+									<h2 class="h6 text-uppercase text-muted fw-bolder">Défi</h2>
+									<p class="mb-0">{{ project.challenge }}</p>
+								</div>
+							}
+							@if (project.outcome) {
+								<div class="mb-3">
+									<h2 class="h6 text-uppercase text-muted fw-bolder">Résultat</h2>
+									<p class="mb-0">{{ project.outcome }}</p>
+								</div>
+							}
+							@if (project.links?.length) {
+								<div class="mb-4">
+									<h2 class="h6 text-uppercase text-muted fw-bolder">Liens</h2>
+									<div class="d-flex flex-wrap gap-2">
+										@for (link of project.links; track link.url) {
+											<a class="btn btn-outline-dark btn-sm" [href]="link.url" target="_blank" rel="noreferrer">{{ link.label }}</a>
+										}
+									</div>
+								</div>
+							}
 							<a [routerLink]="['/projects']" class="btn btn-outline-dark mt-3">Retour aux projets</a>
 						</div>
 					</div>

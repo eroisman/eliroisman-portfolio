@@ -1,0 +1,9 @@
+{
+  "name": "eliroisman-portfolio",
+  "private": true,
+  "scripts": {
+    "build": "node angular-app/node_modules/@angular/cli/bin/ng.js build",
+    "start": "node angular-app/node_modules/@angular/cli/bin/ng.js serve",
+    "test": "node angular-app/node_modules/@angular/cli/bin/ng.js test --watch=false"
+  }
+}

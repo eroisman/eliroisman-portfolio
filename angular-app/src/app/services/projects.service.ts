@@ -13,10 +13,30 @@ export class ProjectsService {
   getProjects(): Observable<Project[]> {
     return this.http.get<Project[]>('data/projects.json').pipe(
       catchError(() => this.http.get<Project[]>('assets/data/projects.json')),
-      catchError((error) => {
+      map((projects: Project[]) =>
+        [...projects].sort((first, second) => {
+          const firstOrder = first.order ?? Number.POSITIVE_INFINITY;
+          const secondOrder = second.order ?? Number.POSITIVE_INFINITY;
+
+          if (firstOrder !== secondOrder) {
+            return firstOrder - secondOrder;
+          }
+
+          return first.title.localeCompare(second.title, 'fr');
+        })
+      ),
+      catchError((error: unknown) => {
         console.error('Error loading projects:', error);
         return of([]);
       })
+    );
+  }
+
+  getFeaturedProjects(limit = 4): Observable<Project[]> {
+    return this.getProjects().pipe(
+      map((projects: Project[]) =>
+        projects.filter((project: Project) => project.featured !== false).slice(0, limit)
+      )
     );
   }
 
@@ -24,10 +44,10 @@ export class ProjectsService {
     const normalizedSlug = decodeURIComponent(slug).trim().toLowerCase();
 
     return this.getProjects().pipe(
-      map((projects) =>
-        projects.find((project) => project.slug.trim().toLowerCase() === normalizedSlug)
+      map((projects: Project[]) =>
+        projects.find((project: Project) => project.slug.trim().toLowerCase() === normalizedSlug)
       ),
-      catchError((error) => {
+      catchError((error: unknown) => {
         console.error('Error loading project by slug:', error);
         return of(undefined);
       })
