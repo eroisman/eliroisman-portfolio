@@ -34,12 +34,7 @@
     "aboutTitle": "À propos de moi",
     "aboutEyebrow": "Qui suis-je ?",
     "paragraphs": [
-      "Je m'appelle <strong>Eli ROISMAN</strong>, étudiant en <a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-services-informatiques-aux-organisations-option-b-solutions-logicielles-et-applications-metiers\">BTS SIO</a> (Services Informatiques aux Organisations) avec une spécialisation en SLAM (Solutions Logicielles et Applications Métiers) au Lycée polyvalent Jacques Brel à Vénissieux.",
-      "Passionné par l'informatique, j'ai choisi cette filière pour approfondir mes compétences en développement de logiciels et en programmation.",
-      "Actuellement, je suis en alternance chez <a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.inetum.com/en\">Inetum</a>, où j'évolue en tant que Consultant Technique Junior sur le système ERP d'Oracle (<a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.oracle.com/applications/jd-edwards-enterpriseone/\">JD Edwards</a>). Cette expérience en entreprise m'offre une opportunité unique de mettre en pratique mes connaissances théoriques acquises en classe.",
-      "Au cours de mon parcours académique et professionnel, j'ai acquis une solide base en langages de programmation tels que C#, TypeScript et JavaScript. J'ai également appris à concevoir et à développer des applications web. Mon expérience en entreprise m'a également permis de développer une approche méthodique pour répondre aux besoins des utilisateurs et fournir des solutions performantes et intuitives.",
-      "Mon portfolio est un reflet de mon parcours, mettant en avant certains de mes projets les plus marquants, tant au niveau académique qu'en entreprise. Vous y trouverez des détails sur mes réalisations, les technologies utilisées et les résultats obtenus. J'ai hâte de partager mon travail avec vous et de discuter de mes compétences, de mes ambitions professionnelles et des opportunités futures.",
-      "N'hésitez pas à parcourir mon portfolio et à me <a href=\"#/contact\">contacter</a> si vous avez des questions ou si vous souhaitez collaborer sur un projet passionnant. Je suis ouvert à de nouvelles opportunités et impatient de contribuer à des initiatives stimulantes.",
+      "Je m'appelle <strong>Eli ROISMAN</strong>, étudiant en... ", 
       "Merci de votre visite !"
     ],
     "closingNote": "",
@@ -48,7 +43,17 @@
     "experienceTitle": "Expérience",
     "experienceItems": [
       {
-        "period": "2022 - Present",
+        "period": "2024 - Présent",
+        "title": "Site Reliability Engineer (SRE) Junior",
+        "organization": "Orange France",
+        "location": "Lyon, FR",
+        "details": [
+          "En tant que Site Reliability Engineer (SRE) Junior chez Orange France, je suis responsable de la fiabilité, de la performance et de la disponibilité des systèmes informatiques de l'entreprise.",
+          "Surveillance et gestion des problèmes pour assurer la disponibilité des services."
+        ]
+      },
+      {
+        "period": "2022 - 2024",
         "title": "Consultant Technique Junior (Oracle JD Edwords)",
         "organization": "Inetum Business Solutions",
         "location": "Lyon, FR",
@@ -63,7 +68,21 @@
     "educationTitle": "Éducation",
     "educationItems": [
       {
-        "period": "2022 - Présent",
+        "period": "2025 - Présent",
+        "institution": "CPE Lyon",
+        "location": "Villeurbanne, FR",
+        "degree": "Diplôme d'Ingénieur en Informatique",
+        "description": "Le CPE Lyon (École Supérieure de Chimie Physique Électronique de Lyon) est une école d'ingénieurs française réputée qui propose une formation en informatique de haut niveau. Le diplôme d'ingénieur en informatique du CPE Lyon est conçu pour formar des professionnels compétents dans les domaines de l'informatique, du développement logiciel, de la gestion de projets informatiques et de la recherche en informatique."
+      },
+      {
+        "period": "2024 - 2025",
+        "institution": "INSA Lyon",
+        "location": "Villeurbanne, FR",
+        "degree": "Diplôme d'Ingénieur en Informatique",
+        "description": "L'INSA Lyon (Institut National des Sciences Appliquées de Lyon) est une école d'ingénieurs française réputée qui propose une formation en informatique de haut niveau. Le diplôme d'ingénieur en informatique de l'INSA Lyon est conçu pour formar des professionnels compétents dans les domaines de l'informatique, du développement logiciel, de la gestion de projets informatiques et de la recherche en informatique."
+      },
+      {
+        "period": "2022 - 2024",
         "institution": "Lycée Polyvalent Jacques Brel",
         "location": "Vénissieux, FR",
         "degree": "BTS SIO",
@@ -78,9 +97,7 @@
         "level": "Niveau B2",
         "description": "Le DELF Pro (Diplôme d'Étude en Langue Française option Professionnelle) est un diplôme d'études en langue française au niveau professionnel. Il atteste d'un niveau intermédiaire de compétence en français (B2) et est reconnu à l'échelle internationale."
       }
-    ],
-    "certificationTitle": "Parcours de certification complémentaires",
-    "certificationIframeUrl": "https://onedrive.live.com/embed?resid=5F2A778F915B0ED3%219569&authkey=!ABtBIoVmofJWBAM&em=2&wdAr=1.7777777777777777&wdEaaCheck=0"
+    ]
   },
   "contact": {
     "title": "Contact",
